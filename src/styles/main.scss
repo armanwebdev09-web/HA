@@ -1,0 +1,72 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'typography';
+@use 'spacing';
+@use 'glass';
+@use 'buttons';
+@use 'animations';
+
+// Global CSS Reset & Setup
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-sans;
+  background-color: $bg-midnight;
+  color: $ivory-main;
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(107, 15, 36, 0.25) 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(212, 43, 88, 0.15) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+// Navigation Responsive Helpers
+@media (max-width: 900px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-toggle {
+    display: flex !important;
+  }
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+// Selection Styling
+::selection {
+  background: rgba(212, 43, 88, 0.35);
+  color: $ivory-main;
+}
+
+// Custom Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-midnight-deep;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: $radius-full;
+  border: 2px solid $bg-midnight-deep;
+
+  &:hover {
+    background: rgba(212, 43, 88, 0.5);
+  }
+}

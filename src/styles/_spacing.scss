@@ -1,0 +1,87 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Main Page Container
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(0.85rem, 4vw, 3rem);
+  padding-right: clamp(0.85rem, 4vw, 3rem);
+  box-sizing: border-box;
+}
+
+.container-narrow {
+  max-width: 800px;
+}
+
+.container-wide {
+  max-width: 1400px;
+}
+
+// Section Containers
+.section {
+  position: relative;
+  padding-top: clamp(2.5rem, 6vw, 6rem);
+  padding-bottom: clamp(2.5rem, 6vw, 6rem);
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.section-sm {
+  padding-top: clamp(1.75rem, 4vw, 3.5rem);
+  padding-bottom: clamp(1.75rem, 4vw, 3.5rem);
+}
+
+// Grid Layout Helpers
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-md;
+
+  @include respond-to('md') {
+    grid-template-columns: 1fr;
+    gap: $space-sm;
+  }
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-md;
+
+  @include respond-to('lg') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to('md') {
+    grid-template-columns: 1fr;
+    gap: $space-sm;
+  }
+}
+
+// Spacing Utilities
+.mb-xs { margin-bottom: $space-xs; }
+.mb-sm { margin-bottom: $space-sm; }
+.mb-md { margin-bottom: $space-md; }
+.mb-lg { margin-bottom: $space-lg; }
+.mb-xl { margin-bottom: $space-xl; }
+
+.gap-sm { gap: $space-sm; }
+.gap-md { gap: $space-md; }
+.gap-lg { gap: $space-lg; }
+
+// Mobile Specific Spacing Safeguards (320px - 414px)
+@media (max-width: 480px) {
+  .section {
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+  }
+  
+  .glass-card,
+  .glass-panel-wine {
+    padding: 1.25rem 1rem !important;
+  }
+}

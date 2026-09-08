@@ -1,0 +1,87 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Global Typography Classes
+.font-serif {
+  font-family: $font-serif;
+}
+
+.font-sans {
+  font-family: $font-sans;
+}
+
+// Headings Hierarchy with Fluid Typography
+h1, .h1 {
+  font-family: $font-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: $ivory-main;
+}
+
+h2, .h2 {
+  font-family: $font-serif;
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: $ivory-main;
+}
+
+h3, .h3 {
+  font-family: $font-serif;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.3;
+  color: $ivory-muted;
+}
+
+h4, .h4 {
+  font-family: $font-sans;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  color: $ivory-main;
+}
+
+// Body Text
+p, .text-body {
+  font-family: $font-sans;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: $ivory-muted;
+}
+
+.text-small {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: $ivory-subtle;
+}
+
+.text-caption {
+  font-family: $font-sans;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $ivory-dark;
+}
+
+// Romantic Accent Styles
+.text-romantic {
+  font-family: $font-serif;
+  font-style: italic;
+  color: $rose-wine;
+}
+
+.text-gradient-burgundy {
+  background: linear-gradient(135deg, $ivory-main 30%, $rose-wine 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-glow {
+  @include text-glow-romantic;
+}

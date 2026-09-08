@@ -1,0 +1,75 @@
+// ==========================================
+// CINEMATIC ROMANTIC DESIGN SYSTEM - VARIABLES
+// Private Birthday Website Theme
+// ==========================================
+
+// 1. Color Palette
+// Deep midnight / dark background
+$bg-midnight: #0a0712;
+$bg-midnight-deep: #06040a;
+$bg-midnight-surface: #130d24;
+$bg-midnight-overlay: rgba(10, 7, 18, 0.85);
+
+// Burgundy / Wine romantic accents
+$burgundy-dark: #3b0918;
+$burgundy-main: #6b0f24;
+$burgundy-vibrant: #8b1532;
+$burgundy-light: #ab1d42;
+$rose-wine: #d42b58;
+
+// Warm Ivory / Cream Typography
+$ivory-main: #fcf9f2;
+$ivory-muted: #e4dec3;
+$ivory-subtle: #b8b09d;
+$ivory-dark: #8c8473;
+
+// Subtle Glow & Accents
+$pink-glow-soft: rgba(228, 120, 150, 0.12);
+$pink-glow-intense: rgba(212, 43, 88, 0.25);
+$gold-accent: #d4af37;
+$gold-accent-soft: rgba(212, 175, 55, 0.2);
+
+// 2. Glassmorphism Specifications
+$glass-bg-subtle: rgba(255, 255, 255, 0.03);
+$glass-bg-medium: rgba(255, 255, 255, 0.05);
+$glass-bg-strong: rgba(255, 255, 255, 0.08);
+$glass-border-subtle: rgba(255, 255, 255, 0.08);
+$glass-border-glow: rgba(212, 43, 88, 0.3);
+$glass-blur: 16px;
+$glass-blur-strong: 24px;
+
+// 3. Shadows & Elevation
+$shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+$shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+$shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+$shadow-glow-burgundy: 0 0 35px rgba(107, 15, 36, 0.35);
+$shadow-glow-pink: 0 0 40px rgba(212, 43, 88, 0.25);
+
+// 4. Typography Families
+$font-serif: 'Cormorant Garamond', Georgia, serif;
+$font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+// 5. Spacing System (8pt / Rem System)
+$space-xs: 0.5rem;   // 8px
+$space-sm: 1rem;     // 16px
+$space-md: 1.5rem;   // 24px
+$space-lg: 2.5rem;   // 40px
+$space-xl: 4rem;     // 64px
+$space-2xl: 6rem;    // 96px
+
+// 6. Responsive Breakpoints
+$breakpoint-sm: 480px;   // Mobile small
+$breakpoint-md: 768px;   // Tablet
+$breakpoint-lg: 1024px;  // Desktop
+$breakpoint-xl: 1280px;  // Wide Desktop
+
+// 7. Transitions & Animation Timings
+$transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+$transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+$transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+
+// 8. Border Radius System
+$radius-sm: 8px;
+$radius-md: 16px;
+$radius-lg: 24px;
+$radius-full: 9999px;

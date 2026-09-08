@@ -1,0 +1,118 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Hardware-accelerated Keyframe Animations
+
+// Soft Ambient Pulse Glow
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale3d(1.05, 1.05, 1);
+  }
+}
+
+// Gentle Floating Motion
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+// Star Twinkle Effect
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale3d(0.8, 0.8, 1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale3d(1.15, 1.15, 1);
+  }
+}
+
+// Utility Classes with Performance Hints
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
+  will-change: transform;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 8s ease-in-out infinite;
+  will-change: transform, opacity;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+.animate-star-twinkle {
+  animation: starTwinkle 3s ease-in-out infinite;
+  will-change: transform, opacity;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+// Ambient Background Glow Blobs (Optimized)
+.ambient-glow-burgundy {
+  position: absolute;
+  width: clamp(280px, 40vw, 480px);
+  height: clamp(280px, 40vw, 480px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 21, 50, 0.28) 0%, rgba(10, 7, 18, 0) 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+  will-change: opacity;
+}
+
+.ambient-glow-pink {
+  position: absolute;
+  width: clamp(240px, 35vw, 380px);
+  height: clamp(240px, 35vw, 380px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 43, 88, 0.18) 0%, rgba(10, 7, 18, 0) 70%);
+  filter: blur(45px);
+  pointer-events: none;
+  z-index: 0;
+  will-change: opacity;
+}
+
+// Mobile Performance Optimizations
+@media (max-width: $breakpoint-md) {
+  .ambient-glow-burgundy,
+  .ambient-glow-pink {
+    filter: blur(30px);
+    opacity: 0.6;
+  }
+
+  .glass-card,
+  .glass-panel-wine {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+// Universal Accessibility Override
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

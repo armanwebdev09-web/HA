@@ -1,0 +1,59 @@
+@use 'variables' as *;
+
+// Responsive Media Query Breakpoint Mixin
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'sm' {
+    @media (max-width: $breakpoint-sm) { @content; }
+  } @else if $breakpoint == 'md' {
+    @media (max-width: $breakpoint-md) { @content; }
+  } @else if $breakpoint == 'lg' {
+    @media (max-width: $breakpoint-lg) { @content; }
+  } @else if $breakpoint == 'xl' {
+    @media (max-width: $breakpoint-xl) { @content; }
+  }
+}
+
+// Flexbox Center Helpers
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Glassmorphism Base Mixin
+@mixin glass-panel($bg: $glass-bg-medium, $border: $glass-border-subtle, $blur: $glass-blur) {
+  background: $bg;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  box-shadow: $shadow-md;
+}
+
+// Accessible Focus Ring Mixin
+@mixin focus-ring {
+  outline: none;
+  &:focus-visible {
+    outline: 2px solid $rose-wine;
+    outline-offset: 4px;
+    box-shadow: $shadow-glow-pink;
+  }
+}
+
+// Subtle Text Glow
+@mixin text-glow-romantic {
+  text-shadow: 0 0 20px rgba(212, 43, 88, 0.4), 0 0 40px rgba(107, 15, 36, 0.3);
+}
+
+// Reduced Motion Preference
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}

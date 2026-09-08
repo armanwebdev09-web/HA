@@ -1,0 +1,93 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: $font-sans;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.75rem 1.75rem;
+  border-radius: $radius-full;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all $transition-smooth;
+  @include focus-ring;
+
+  @include respond-to('sm') {
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+  }
+}
+
+// Primary Burgundy Gradient Button
+.btn-primary {
+  background: linear-gradient(135deg, $burgundy-vibrant 0%, $burgundy-main 100%);
+  color: $ivory-main;
+  border-color: rgba(212, 43, 88, 0.4);
+  box-shadow: $shadow-md, 0 0 20px rgba(139, 21, 50, 0.3);
+
+  &:hover {
+    background: linear-gradient(135deg, $burgundy-light 0%, $burgundy-vibrant 100%);
+    box-shadow: $shadow-lg, $shadow-glow-pink;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Secondary Glass Button
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur($glass-blur);
+  color: $ivory-main;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(212, 43, 88, 0.4);
+    box-shadow: 0 0 20px rgba(212, 43, 88, 0.2);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Ghost Minimalist Button
+.btn-ghost {
+  background: transparent;
+  color: $ivory-muted;
+  padding: 0.5rem 1rem;
+
+  &:hover {
+    color: $ivory-main;
+    background: rgba(255, 255, 255, 0.04);
+  }
+}
+
+// Icon-only Round Button
+.btn-icon {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  @include flex-center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: $ivory-main;
+  transition: all $transition-smooth;
+
+  &:hover {
+    background: rgba(212, 43, 88, 0.2);
+    border-color: rgba(212, 43, 88, 0.5);
+    box-shadow: $shadow-glow-pink;
+    transform: scale(1.05);
+  }
+}
