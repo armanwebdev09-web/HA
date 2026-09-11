@@ -156,18 +156,70 @@ export const birthdayConfig = {
     closingQuote: "Maybe that's one of my favorite things about us."
   },
 
-  // Future Dream Configuration
+  // Future Dream Configuration - Winter Night Story
   futureDreamStory: {
     badge: "A Memory Waiting For Us ❄️",
-    headline: "One more memory hasn't happened yet.",
-    dreamTitle: "Snow Mountains Trip 🏔️",
-    dreamDescription: "Enjoying our trip on the snow mountains.",
-    lines: [
-      "Someday...",
-      "We'll stand somewhere in the snow-covered mountains.",
-      "We'll make another memory."
-    ],
-    endingQuote: "This one is waiting for us. ❄️❤️"
+    title: "A Memory Waiting For Us",
+    openingText: "Sometimes I dream about a little snowfall...",
+    scenes: [
+      {
+        id: "night-walk",
+        badge: "Around 9 PM",
+        headline: "A Quiet Winter Walk",
+        paragraphs: [
+          "It's around 9 at night.",
+          "We're walking together under the warm glow of the streetlights. There are couples walking around us, laughing and enjoying the beautiful night. Everything feels calm, peaceful, and somehow perfect."
+        ]
+      },
+      {
+        id: "the-joke",
+        badge: "Playful Moments",
+        headline: "The Stupid Joke & The Cute Pout",
+        paragraphs: [
+          "Then, as usual, I crack some stupid joke.",
+          "You pretend to get angry at me.",
+          "And there I am, trying my best to make you smile again.",
+          "But honestly... you look so cute when you're angry that I almost forget that I'm supposed to convince you. 😂❤️"
+        ]
+      },
+      {
+        id: "ice-cream",
+        badge: "The Sweet Fix",
+        headline: "Your Favorite Ice Cream",
+        paragraphs: [
+          "Then I notice a little ice-cream stall nearby.",
+          "I get your favorite ice cream for you."
+        ]
+      },
+      {
+        id: "smile",
+        badge: "Pure Happiness",
+        headline: "That Beautiful Smile",
+        paragraphs: [
+          "And suddenly, that angry face disappears.",
+          "You smile."
+        ]
+      },
+      {
+        id: "the-hug",
+        badge: "Under The Falling Snow",
+        headline: "A Warm, Little Hug",
+        paragraphs: [
+          "We look at each other, laugh, and then we just hug.",
+          "A warm, cute little hug...",
+          "while the snow keeps falling around us."
+        ]
+      },
+      {
+        id: "the-dream",
+        badge: "One Day",
+        headline: "Waiting For Us",
+        paragraphs: [
+          "Maybe this is just a dream right now.",
+          "But I really hope one day, this becomes one of our memories. ❄️❤️"
+        ]
+      }
+    ]
   },
 
   // Final Closing Experience Configuration
