@@ -20,10 +20,11 @@ const PhotosSection = () => {
             gap: '0.5rem',
             padding: '0.4rem 1rem',
             borderRadius: '50px',
-            background: 'rgba(212, 43, 88, 0.12)',
-            border: '1px solid rgba(212, 43, 88, 0.25)',
-            color: '#d42b58',
+            background: '#FFF0F4',
+            border: '1px solid rgba(232, 160, 184, 0.4)',
+            color: '#B86B82',
             fontSize: '0.82rem',
+            fontWeight: 600,
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
             marginBottom: '1rem'
@@ -32,11 +33,11 @@ const PhotosSection = () => {
             <span>Passcode Protected</span>
           </div>
 
-          <h2 className="font-serif text-glow mb-md" style={{ color: '#fcf9f2' }}>
+          <h2 className="font-serif text-glow mb-md" style={{ color: '#3D3035' }}>
             Our Photos 🔐
           </h2>
 
-          <p style={{ color: '#b8b09d', maxWidth: '600px', margin: '0 auto 2.5rem auto' }}>
+          <p style={{ color: '#7A6870', maxWidth: '600px', margin: '0 auto 2.5rem auto' }}>
             This photo album is locked for {birthdayConfig.name}. Enter your passcode to unlock our memories.
           </p>
 

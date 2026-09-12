@@ -44,17 +44,17 @@ const FinalClosingSection = () => {
   return (
     <section id="closing" className="section" style={{
       position: 'relative',
-      background: 'linear-gradient(180deg, #0a0712 0%, #040208 100%)',
+      background: 'linear-gradient(180deg, #FFF7F8 0%, #FCECEF 100%)',
       minHeight: '90vh',
       display: 'flex',
       flexDirection: 'column',
-      justify: 'center',
+      justifyContent: 'center',
       alignItems: 'center',
       paddingTop: '6rem',
       paddingBottom: '6rem'
     }}>
       {/* Calm ambient background lighting */}
-      <div className="ambient-glow-burgundy" style={{ top: '40%', left: '50%', transform: 'translate(-50%, -50%)', opacity: 0.2 }} />
+      <div className="ambient-glow-blush" style={{ top: '40%', left: '50%', transform: 'translate(-50%, -50%)', opacity: 0.35 }} />
 
       <div className="container container-narrow" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
         <motion.div
@@ -72,13 +72,14 @@ const FinalClosingSection = () => {
               gap: '0.6rem',
               padding: '0.45rem 1.25rem',
               borderRadius: '50px',
-              background: 'rgba(212, 43, 88, 0.12)',
-              border: '1px solid rgba(212, 43, 88, 0.25)',
-              color: '#fcf9f2',
+              background: '#FFF0F4',
+              border: '1px solid rgba(232, 160, 184, 0.4)',
+              color: '#B86B82',
               fontSize: '0.9rem',
+              fontWeight: 600,
               letterSpacing: '0.15em'
             }}>
-              <Calendar size={14} color="#d42b58" />
+              <Calendar size={14} color="#B86B82" />
               <span>{dateLabel || "14 • 09 • 2026"}</span>
             </div>
           </motion.div>
@@ -87,7 +88,7 @@ const FinalClosingSection = () => {
           <motion.h2
             variants={itemVariants}
             className="font-serif text-glow"
-            style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', color: '#fcf9f2', margin: 0 }}
+            style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', color: '#3D3035', margin: 0, fontWeight: 600 }}
           >
             {headline || "Happy Birthday ❤️"}
           </motion.h2>
@@ -100,7 +101,7 @@ const FinalClosingSection = () => {
                 className="font-serif"
                 style={{
                   fontSize: 'clamp(1.2rem, 2.5vw, 1.5rem)',
-                  color: '#e4dec3',
+                  color: '#7A6870',
                   fontStyle: 'italic',
                   lineHeight: 1.6
                 }}
@@ -116,7 +117,7 @@ const FinalClosingSection = () => {
             style={{
               width: '80px',
               height: '1px',
-              background: 'linear-gradient(to right, transparent, rgba(212, 43, 88, 0.5), transparent)',
+              background: 'linear-gradient(to right, transparent, rgba(232, 160, 184, 0.8), transparent)',
               margin: '1.5rem 0'
             }}
           />
@@ -125,7 +126,7 @@ const FinalClosingSection = () => {
           <motion.p
             variants={itemVariants}
             className="font-serif"
-            style={{ fontSize: 'clamp(1.35rem, 3vw, 1.85rem)', color: '#fcf9f2', fontWeight: 500 }}
+            style={{ fontSize: 'clamp(1.35rem, 3vw, 1.85rem)', color: '#3D3035', fontWeight: 600 }}
           >
             {beginningLine}
           </motion.p>
@@ -140,8 +141,9 @@ const FinalClosingSection = () => {
               style={{
                 fontSize: 'clamp(2.5rem, 7vw, 4.5rem)',
                 letterSpacing: '0.1em',
-                color: '#fcf9f2',
-                fontWeight: 700
+                color: '#B86B82',
+                fontWeight: 700,
+                textShadow: '0 0 25px rgba(232, 160, 184, 0.4)'
               }}
             >
               {toBeContinuedText || "TO BE CONTINUED..."}
@@ -156,11 +158,14 @@ const FinalClosingSection = () => {
               style={{
                 padding: '0.8rem 1.75rem',
                 fontSize: '0.92rem',
-                letterSpacing: '0.04em'
+                letterSpacing: '0.04em',
+                background: '#FFFFFF',
+                color: '#3D3035',
+                border: '1px solid rgba(232, 160, 184, 0.4)'
               }}
               aria-label="Replay Our Story"
             >
-              <RotateCcw size={16} />
+              <RotateCcw size={16} color="#B86B82" />
               <span>{replayButtonText || "Replay Our Story"}</span>
             </button>
           </motion.div>

@@ -66,9 +66,9 @@ const Lightbox = ({ photos = [], currentIndex = 0, isOpen = false, onClose, onNa
             position: 'fixed',
             inset: 0,
             zIndex: 10000,
-            backgroundColor: 'rgba(6, 4, 10, 0.96)',
-            backdropFilter: 'blur(16px)',
-            WebkitBackdropFilter: 'blur(16px)',
+            backgroundColor: 'rgba(38, 28, 33, 0.94)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -90,7 +90,10 @@ const Lightbox = ({ photos = [], currentIndex = 0, isOpen = false, onClose, onNa
               right: '1rem',
               width: '44px',
               height: '44px',
-              zIndex: 10002
+              zIndex: 10002,
+              background: 'rgba(255, 247, 248, 0.1)',
+              borderColor: 'rgba(232, 160, 184, 0.3)',
+              color: '#FFF7F8'
             }}
             aria-label="Close Lightbox"
           >
@@ -102,7 +105,7 @@ const Lightbox = ({ photos = [], currentIndex = 0, isOpen = false, onClose, onNa
             position: 'absolute',
             top: '1.25rem',
             left: '1.25rem',
-            color: '#b8b09d',
+            color: '#F3C6D3',
             fontSize: '0.85rem',
             letterSpacing: '0.1em'
           }}>
@@ -121,7 +124,10 @@ const Lightbox = ({ photos = [], currentIndex = 0, isOpen = false, onClose, onNa
                 transform: 'translateY(-50%)',
                 width: '44px',
                 height: '44px',
-                zIndex: 10002
+                zIndex: 10002,
+                background: 'rgba(255, 247, 248, 0.1)',
+                borderColor: 'rgba(232, 160, 184, 0.3)',
+                color: '#FFF7F8'
               }}
               aria-label="Previous Photo"
             >
@@ -153,8 +159,8 @@ const Lightbox = ({ photos = [], currentIndex = 0, isOpen = false, onClose, onNa
                   maxHeight: '68vh',
                   objectFit: 'contain',
                   borderRadius: '12px',
-                  boxShadow: '0 16px 40px rgba(0, 0, 0, 0.8)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)'
+                  boxShadow: '0 20px 50px rgba(25, 17, 21, 0.7)',
+                  border: '1px solid rgba(232, 160, 184, 0.25)'
                 }}
               />
             </AnimatePresence>
@@ -167,17 +173,17 @@ const Lightbox = ({ photos = [], currentIndex = 0, isOpen = false, onClose, onNa
                 style={{
                   marginTop: '1rem',
                   textAlign: 'center',
-                  color: '#fcf9f2',
+                  color: '#FFF7F8',
                   maxWidth: '90vw'
                 }}
               >
                 {currentPhoto.caption && (
-                  <p className="font-serif" style={{ fontSize: 'clamp(1.1rem, 3.5vw, 1.35rem)', fontStyle: 'italic', marginBottom: '0.2rem' }}>
+                  <p className="font-serif" style={{ fontSize: 'clamp(1.1rem, 3.5vw, 1.35rem)', fontStyle: 'italic', marginBottom: '0.2rem', color: '#FFF7F8' }}>
                     "{currentPhoto.caption}"
                   </p>
                 )}
                 {currentPhoto.date && (
-                  <span style={{ fontSize: '0.8rem', color: '#b8b09d', letterSpacing: '0.08em' }}>
+                  <span style={{ fontSize: '0.8rem', color: '#E8C7A8', letterSpacing: '0.08em' }}>
                     {currentPhoto.date}
                   </span>
                 )}
@@ -197,7 +203,10 @@ const Lightbox = ({ photos = [], currentIndex = 0, isOpen = false, onClose, onNa
                 transform: 'translateY(-50%)',
                 width: '44px',
                 height: '44px',
-                zIndex: 10002
+                zIndex: 10002,
+                background: 'rgba(255, 247, 248, 0.1)',
+                borderColor: 'rgba(232, 160, 184, 0.3)',
+                color: '#FFF7F8'
               }}
               aria-label="Next Photo"
             >

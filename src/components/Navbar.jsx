@@ -30,14 +30,15 @@ const Navbar = () => {
       position: 'sticky',
       top: 0,
       zIndex: 100,
-      background: 'rgba(10, 7, 18, 0.85)',
+      background: 'rgba(255, 247, 248, 0.9)',
       backdropFilter: 'blur(16px)',
       WebkitBackdropFilter: 'blur(16px)',
-      borderBottom: '1px solid rgba(255, 255, 255, 0.06)'
+      borderBottom: '1px solid rgba(232, 160, 184, 0.25)',
+      boxShadow: '0 2px 14px rgba(184, 107, 130, 0.06)'
     }}>
       <div className="container" style={{
         display: 'flex',
-        justify: 'space-between',
+        justifyContent: 'space-between',
         alignItems: 'center',
         paddingTop: '0.85rem',
         paddingBottom: '0.85rem'
@@ -48,8 +49,8 @@ const Navbar = () => {
           onClick={(e) => handleNavClick(e, '#hero')}
           style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', textDecoration: 'none' }}
         >
-          <Sparkles size={20} color="#d42b58" />
-          <span className="font-serif" style={{ fontSize: '1.3rem', color: '#fcf9f2', fontWeight: 600 }}>
+          <Sparkles size={20} color="#E8A0B8" />
+          <span className="font-serif" style={{ fontSize: '1.35rem', color: '#3D3035', fontWeight: 600 }}>
             {birthdayConfig.name || 'Kashish'} ❤️
           </span>
         </a>
@@ -63,14 +64,14 @@ const Navbar = () => {
               onClick={(e) => handleNavClick(e, link.href)}
               style={{
                 textDecoration: 'none',
-                color: '#e4dec3',
-                fontSize: '0.88rem',
-                fontWeight: 400,
+                color: '#7A6870',
+                fontSize: '0.9rem',
+                fontWeight: 500,
                 transition: 'color 0.2s',
-                letterSpacing: '0.02em'
+                letterSpacing: '0.01em'
               }}
-              onMouseEnter={(e) => e.target.style.color = '#fcf9f2'}
-              onMouseLeave={(e) => e.target.style.color = '#e4dec3'}
+              onMouseEnter={(e) => e.target.style.color = '#3D3035'}
+              onMouseLeave={(e) => e.target.style.color = '#7A6870'}
             >
               {link.label}
             </a>
@@ -85,7 +86,7 @@ const Navbar = () => {
             display: 'none',
             background: 'none',
             border: 'none',
-            color: '#fcf9f2',
+            color: '#3D3035',
             cursor: 'pointer',
             padding: '0.4rem'
           }}
@@ -98,12 +99,13 @@ const Navbar = () => {
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
         <div style={{
-          background: 'rgba(10, 7, 18, 0.95)',
-          borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+          background: 'rgba(255, 247, 248, 0.98)',
+          borderBottom: '1px solid rgba(232, 160, 184, 0.25)',
           padding: '1rem 1.5rem',
           display: 'flex',
           flexDirection: 'column',
-          gap: '1rem'
+          gap: '1rem',
+          boxShadow: '0 8px 20px rgba(184, 107, 130, 0.08)'
         }}>
           {navLinks.map((link, idx) => (
             <a
@@ -112,8 +114,9 @@ const Navbar = () => {
               onClick={(e) => handleNavClick(e, link.href)}
               style={{
                 textDecoration: 'none',
-                color: '#fcf9f2',
+                color: '#3D3035',
                 fontSize: '1rem',
+                fontWeight: 500,
                 padding: '0.4rem 0'
               }}
             >

@@ -1,27 +1,49 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
-// Base Glass Card
+// Base Glass Diary Card
 .glass-card {
-  @include glass-panel($glass-bg-medium, $glass-border-subtle, $glass-blur);
-  padding: clamp(1.25rem, 3vw, 2.5rem);
+  background: $bg-card;
+  backdrop-filter: blur($glass-blur);
+  -webkit-backdrop-filter: blur($glass-blur);
+  border: 1px solid $border-delicate;
+  border-radius: $radius-md;
+  box-shadow: $shadow-sm;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
   transition: transform $transition-smooth, border-color $transition-smooth, box-shadow $transition-smooth;
 
   &:hover {
-    border-color: rgba(212, 43, 88, 0.25);
-    box-shadow: $shadow-lg, $shadow-glow-pink;
+    border-color: rgba(232, 160, 184, 0.55);
+    box-shadow: $shadow-md, $shadow-glow-rose;
   }
 }
 
-// Elevated Glass Panel with Wine Tint
-.glass-panel-wine {
-  background: linear-gradient(135deg, rgba(59, 9, 24, 0.4) 0%, rgba(10, 7, 18, 0.6) 100%);
+// Elevated Romantic Diary Panel (replaces old dark wine panel)
+.glass-panel-wine,
+.glass-panel-romantic {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(252, 236, 239, 0.85) 100%);
   backdrop-filter: blur($glass-blur-strong);
   -webkit-backdrop-filter: blur($glass-blur-strong);
-  border: 1px solid rgba(212, 43, 88, 0.2);
+  border: 1px solid rgba(232, 160, 184, 0.35);
   border-radius: $radius-lg;
-  box-shadow: $shadow-lg, $shadow-glow-burgundy;
+  box-shadow: $shadow-md;
   padding: clamp(1.5rem, 4vw, 3rem);
+  transition: transform $transition-smooth, box-shadow $transition-smooth;
+}
+
+// Clean White Diary Card
+.diary-card {
+  background: $bg-card;
+  border: 1px solid $border-delicate;
+  border-radius: $radius-md;
+  box-shadow: $shadow-sm;
+  padding: clamp(1.25rem, 3vw, 2.25rem);
+  transition: all $transition-smooth;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    border-color: $accent-primary;
+  }
 }
 
 // Subtle Border Gradient Glass
@@ -30,19 +52,6 @@
   background: $glass-bg-subtle;
   backdrop-filter: blur($glass-blur);
   border-radius: $radius-md;
-  border: 1px solid transparent;
+  border: 1px solid rgba(232, 160, 184, 0.25);
   background-clip: padding-box;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(135deg, rgba(212, 43, 88, 0.4), rgba(255, 255, 255, 0.05));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-  }
 }

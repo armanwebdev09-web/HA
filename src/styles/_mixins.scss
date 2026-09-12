@@ -2,7 +2,9 @@
 
 // Responsive Media Query Breakpoint Mixin
 @mixin respond-to($breakpoint) {
-  @if $breakpoint == 'sm' {
+  @if $breakpoint == 'xs' {
+    @media (max-width: $breakpoint-xs) { @content; }
+  } @else if $breakpoint == 'sm' {
     @media (max-width: $breakpoint-sm) { @content; }
   } @else if $breakpoint == 'md' {
     @media (max-width: $breakpoint-md) { @content; }
@@ -33,22 +35,22 @@
   -webkit-backdrop-filter: blur($blur);
   border: 1px solid $border;
   border-radius: $radius-md;
-  box-shadow: $shadow-md;
+  box-shadow: $shadow-sm;
 }
 
 // Accessible Focus Ring Mixin
 @mixin focus-ring {
   outline: none;
   &:focus-visible {
-    outline: 2px solid $rose-wine;
-    outline-offset: 4px;
-    box-shadow: $shadow-glow-pink;
+    outline: 2px solid $accent-deep;
+    outline-offset: 3px;
+    box-shadow: $shadow-glow-rose;
   }
 }
 
 // Subtle Text Glow
 @mixin text-glow-romantic {
-  text-shadow: 0 0 20px rgba(212, 43, 88, 0.4), 0 0 40px rgba(107, 15, 36, 0.3);
+  text-shadow: 0 0 20px rgba(232, 160, 184, 0.4), 0 0 35px rgba(243, 198, 211, 0.25);
 }
 
 // Reduced Motion Preference

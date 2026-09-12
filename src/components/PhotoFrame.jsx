@@ -9,8 +9,8 @@ const PhotoFrame = ({ photoPath, caption }) => {
       width: '100%',
       borderRadius: '16px',
       overflow: 'hidden',
-      border: '1px solid rgba(255, 255, 255, 0.1)',
-      background: 'rgba(255, 255, 255, 0.02)',
+      border: '1px solid rgba(232, 160, 184, 0.3)',
+      background: '#FFF0F4',
       marginTop: '1.25rem',
       position: 'relative'
     }}>
@@ -18,6 +18,8 @@ const PhotoFrame = ({ photoPath, caption }) => {
         <img
           src={photoPath}
           alt={caption || 'Memory Photo'}
+          loading="lazy"
+          decoding="async"
           onError={() => setHasError(true)}
           style={{
             width: '100%',
@@ -31,17 +33,17 @@ const PhotoFrame = ({ photoPath, caption }) => {
         <div style={{
           padding: '2rem 1.5rem',
           textAlign: 'center',
-          border: '1px dashed rgba(212, 43, 88, 0.3)',
+          border: '1px dashed rgba(232, 160, 184, 0.45)',
           borderRadius: '16px',
-          background: 'rgba(107, 15, 36, 0.15)',
-          color: '#b8b09d',
+          background: '#FFF0F4',
+          color: '#7A6870',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
           gap: '0.5rem'
         }}>
-          <Camera size={24} color="#d42b58" />
+          <Camera size={24} color="#B86B82" />
           <span style={{ fontSize: '0.85rem' }}>Photo Slot</span>
           <code style={{ fontSize: '0.75rem', opacity: 0.7 }}>{photoPath}</code>
         </div>

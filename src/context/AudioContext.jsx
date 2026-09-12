@@ -12,6 +12,7 @@ export const AudioProvider = ({ children }) => {
   const [volume, setVolume] = useState(0.8);
   const [isMuted, setIsMuted] = useState(false);
 
+  const [hasInteracted, setHasInteracted] = useState(false);
   const audioRef = useRef(null);
   const currentSong = songs[currentSongIndex] || null;
 
@@ -21,9 +22,9 @@ export const AudioProvider = ({ children }) => {
     return encodeURI(filePath);
   };
 
-  // Synchronize audio source when track changes
+  // Synchronize audio source ONLY after user has initiated playback
   useEffect(() => {
-    if (!audioRef.current || !currentSong) return;
+    if (!audioRef.current || !currentSong || !hasInteracted) return;
 
     const audio = audioRef.current;
     const targetSrc = getAudioSrc(currentSong.file);
@@ -35,10 +36,10 @@ export const AudioProvider = ({ children }) => {
       setDuration(0);
 
       if (isPlaying) {
-        audio.play().catch(err => console.log('Autoplay prevented:', err));
+        audio.play().catch(err => console.log('Playback prevented:', err));
       }
     }
-  }, [currentSongIndex, currentSong]);
+  }, [currentSongIndex, currentSong, hasInteracted]);
 
   // Audio Event Listeners for precise timing
   useEffect(() => {
@@ -83,6 +84,18 @@ export const AudioProvider = ({ children }) => {
   const togglePlay = () => {
     if (!audioRef.current || !currentSong) return;
 
+    if (!hasInteracted) {
+      setHasInteracted(true);
+      const audio = audioRef.current;
+      const targetSrc = getAudioSrc(currentSong.file);
+      audio.src = targetSrc;
+      audio.load();
+      audio.play()
+        .then(() => setIsPlaying(true))
+        .catch(err => console.log('Playback error:', err));
+      return;
+    }
+
     if (isPlaying) {
       audioRef.current.pause();
       setIsPlaying(false);
@@ -122,6 +135,7 @@ export const AudioProvider = ({ children }) => {
 
   const nextTrack = () => {
     if (songs.length === 0) return;
+    setHasInteracted(true);
     const nextIndex = (currentSongIndex + 1) % songs.length;
     setCurrentSongIndex(nextIndex);
     setIsPlaying(true);
@@ -129,12 +143,14 @@ export const AudioProvider = ({ children }) => {
 
   const prevTrack = () => {
     if (songs.length === 0) return;
+    setHasInteracted(true);
     const prevIndex = (currentSongIndex - 1 + songs.length) % songs.length;
     setCurrentSongIndex(prevIndex);
     setIsPlaying(true);
   };
 
   const selectTrack = (index) => {
+    setHasInteracted(true);
     if (index === currentSongIndex) {
       togglePlay();
     } else {
@@ -161,8 +177,8 @@ export const AudioProvider = ({ children }) => {
       prevTrack,
       selectTrack
     }}>
-      {/* Single Global Audio Tag */}
-      <audio ref={audioRef} preload="auto" />
+      {/* Single Global Audio Tag - No preloading until user requests */}
+      <audio ref={audioRef} preload="none" />
       {children}
     </AudioContext.Provider>
   );

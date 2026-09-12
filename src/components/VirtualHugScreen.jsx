@@ -59,7 +59,8 @@ const VirtualHugScreen = ({ onProceed }) => {
         position: 'fixed',
         inset: 0,
         zIndex: 10000,
-        backgroundColor: '#0a0712',
+        backgroundColor: '#FFF7F8',
+        backgroundImage: 'radial-gradient(circle at 50% 40%, #FFF7F8 0%, #FCECEF 100%)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -71,11 +72,11 @@ const VirtualHugScreen = ({ onProceed }) => {
       }}
     >
       {/* Dreamy Ambient Stars & Particles */}
-      <BackgroundStars count={shouldReduceMotion ? 15 : 45} />
+      <BackgroundStars count={shouldReduceMotion ? 12 : 28} />
 
       {/* Atmospheric Romance Glows */}
       <div
-        className="ambient-glow-burgundy"
+        className="ambient-glow-blush"
         style={{
           position: 'absolute',
           top: '38%',
@@ -84,7 +85,7 @@ const VirtualHugScreen = ({ onProceed }) => {
           width: '420px',
           height: '420px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(139, 21, 50, 0.28) 0%, rgba(10, 7, 18, 0) 70%)',
+          background: 'radial-gradient(circle, rgba(232, 160, 184, 0.24) 0%, rgba(255, 247, 248, 0) 70%)',
           filter: 'blur(40px)',
           pointerEvents: 'none',
           zIndex: 1
@@ -96,10 +97,10 @@ const VirtualHugScreen = ({ onProceed }) => {
           top: '42%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          width: '260px',
-          height: '260px',
+          width: '280px',
+          height: '280px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(235, 120, 155, 0.18) 0%, rgba(10, 7, 18, 0) 75%)',
+          background: 'radial-gradient(circle, rgba(232, 199, 168, 0.22) 0%, rgba(255, 247, 248, 0) 75%)',
           filter: 'blur(30px)',
           pointerEvents: 'none',
           zIndex: 1
@@ -149,7 +150,7 @@ const VirtualHugScreen = ({ onProceed }) => {
               width: '190px',
               height: '190px',
               borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(255, 182, 193, 0.42) 0%, rgba(212, 43, 88, 0.22) 50%, transparent 72%)',
+              background: 'radial-gradient(circle, rgba(243, 198, 211, 0.55) 0%, rgba(232, 160, 184, 0.25) 50%, transparent 72%)',
               filter: 'blur(16px)',
               pointerEvents: 'none',
               zIndex: 0
@@ -183,7 +184,7 @@ const VirtualHugScreen = ({ onProceed }) => {
                 fontSize: '1.15rem',
                 pointerEvents: 'none',
                 zIndex: 4,
-                filter: 'drop-shadow(0 2px 8px rgba(235, 120, 155, 0.5))'
+                filter: 'drop-shadow(0 2px 8px rgba(232, 160, 184, 0.5))'
               }}
             >
               {item.icon}
@@ -222,33 +223,33 @@ const VirtualHugScreen = ({ onProceed }) => {
               <defs>
                 {/* Character 1 (Left): Soft Warm Cream Gradient */}
                 <linearGradient id="charLeftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#fffaf5" />
+                  <stop offset="0%" stopColor="#fffdfb" />
                   <stop offset="60%" stopColor="#f7eae9" />
                   <stop offset="100%" stopColor="#ebd6db" />
                 </linearGradient>
 
                 {/* Character 2 (Right): Gentle Warm Rose Gradient */}
                 <linearGradient id="charRightGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#fff5f5" />
+                  <stop offset="0%" stopColor="#fff7f8" />
                   <stop offset="60%" stopColor="#f5e0e5" />
                   <stop offset="100%" stopColor="#e5c1cb" />
                 </linearGradient>
 
                 {/* Arm gradients */}
                 <linearGradient id="armGradLeft" x1="0%" y1="0%" x2="100%" y2="50%">
-                  <stop offset="0%" stopColor="#fffaf5" />
+                  <stop offset="0%" stopColor="#fffdfb" />
                   <stop offset="100%" stopColor="#ecd4da" />
                 </linearGradient>
 
                 <linearGradient id="armGradRight" x1="100%" y1="0%" x2="0%" y2="50%">
-                  <stop offset="0%" stopColor="#fff5f5" />
+                  <stop offset="0%" stopColor="#fff7f8" />
                   <stop offset="100%" stopColor="#e5c1cb" />
                 </linearGradient>
 
                 {/* Soft shadow under characters */}
                 <radialGradient id="groundShadow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="rgba(0,0,0,0.4)" />
-                  <stop offset="100%" stopColor="rgba(0,0,0,0)" />
+                  <stop offset="0%" stopColor="rgba(61, 48, 53, 0.15)" />
+                  <stop offset="100%" stopColor="rgba(61, 48, 53, 0)" />
                 </radialGradient>
               </defs>
 
@@ -478,15 +479,15 @@ const VirtualHugScreen = ({ onProceed }) => {
                 fontFamily: "'Cormorant Garamond', Georgia, serif",
                 fontSize: 'clamp(1.5rem, 4.2vw, 2.3rem)',
                 fontWeight: 600,
-                color: '#fcf9f2',
+                color: '#3D3035',
                 letterSpacing: '-0.01em',
                 lineHeight: 1.3,
-                textShadow: '0 0 24px rgba(252, 249, 242, 0.25)',
+                textShadow: '0 0 20px rgba(232, 160, 184, 0.25)',
                 margin: 0
               }}
             >
               A little hug for you before we begin.{' '}
-              <span style={{ display: 'inline-block', filter: 'drop-shadow(0 0 8px rgba(255,255,255,0.4))' }}>
+              <span style={{ display: 'inline-block', filter: 'drop-shadow(0 0 6px rgba(232, 160, 184, 0.4))' }}>
                 🤍
               </span>
             </motion.h1>
@@ -503,7 +504,7 @@ const VirtualHugScreen = ({ onProceed }) => {
                 fontSize: 'clamp(1.05rem, 2.6vw, 1.35rem)',
                 fontStyle: 'italic',
                 fontWeight: 400,
-                color: '#e4dec3',
+                color: '#7A6870',
                 letterSpacing: '0.015em',
                 lineHeight: 1.5,
                 margin: 0,
@@ -531,21 +532,21 @@ const VirtualHugScreen = ({ onProceed }) => {
                   padding: '0.95rem 2.4rem',
                   fontSize: '1.05rem',
                   letterSpacing: '0.03em',
-                  background: 'linear-gradient(135deg, #a81c42 0%, #6b0f24 100%)',
-                  boxShadow: '0 8px 24px rgba(171, 29, 66, 0.38), 0 0 25px rgba(212, 43, 88, 0.25)',
-                  border: '1px solid rgba(255, 182, 193, 0.35)',
+                  background: 'linear-gradient(135deg, #E8A0B8 0%, #B86B82 100%)',
+                  boxShadow: '0 8px 24px rgba(184, 107, 130, 0.28), 0 0 20px rgba(232, 160, 184, 0.3)',
+                  border: '1px solid rgba(255, 255, 255, 0.4)',
                   cursor: 'pointer',
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '0.65rem',
                   borderRadius: '9999px',
-                  color: '#fcf9f2',
+                  color: '#FFFFFF',
                   fontWeight: 500,
                 }}
                 aria-label="Come inside"
               >
                 <span>Come inside</span>
-                <Heart size={17} style={{ fill: '#ff4d79', stroke: '#ff4d79' }} />
+                <Heart size={17} style={{ fill: '#FFFFFF', stroke: '#FFFFFF' }} />
               </motion.button>
             </motion.div>
           )}

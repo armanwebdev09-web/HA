@@ -9,7 +9,7 @@
 // Global CSS Reset & Setup
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 * {
@@ -20,17 +20,63 @@ html {
 
 body {
   font-family: $font-sans;
-  background-color: $bg-midnight;
-  color: $ivory-main;
+  background-color: $bg-primary;
+  color: $text-primary;
   min-height: 100vh;
   overflow-x: hidden;
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: 
-    radial-gradient(circle at 15% 20%, rgba(107, 15, 36, 0.25) 0%, transparent 40%),
-    radial-gradient(circle at 85% 75%, rgba(212, 43, 88, 0.15) 0%, transparent 45%);
+    radial-gradient(circle at 12% 14%, rgba(252, 236, 239, 0.9) 0%, transparent 45%),
+    radial-gradient(circle at 88% 78%, rgba(243, 198, 211, 0.45) 0%, transparent 50%),
+    radial-gradient(circle at 50% 45%, rgba(255, 240, 244, 0.7) 0%, transparent 65%);
   background-attachment: fixed;
+}
+
+// Container system
+.container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding-left: clamp(1rem, 3.5vw, 2rem);
+  padding-right: clamp(1rem, 3.5vw, 2rem);
+}
+
+.container-narrow {
+  max-width: 820px;
+}
+
+// Section Base
+.section {
+  padding-top: clamp(3.5rem, 7vw, 6.5rem);
+  padding-bottom: clamp(3.5rem, 7vw, 6.5rem);
+  position: relative;
+}
+
+// Responsive Grids
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(1rem, 2.5vw, 2rem);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2vw, 1.75rem);
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 // Navigation Responsive Helpers
@@ -48,25 +94,25 @@ body {
 
 // Selection Styling
 ::selection {
-  background: rgba(212, 43, 88, 0.35);
-  color: $ivory-main;
+  background: rgba(232, 160, 184, 0.38);
+  color: $text-primary;
 }
 
 // Custom Scrollbar
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: $bg-midnight-deep;
+  background: $bg-secondary;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(232, 160, 184, 0.65);
   border-radius: $radius-full;
-  border: 2px solid $bg-midnight-deep;
+  border: 1px solid $bg-secondary;
 
   &:hover {
-    background: rgba(212, 43, 88, 0.5);
+    background: $accent-deep;
   }
 }

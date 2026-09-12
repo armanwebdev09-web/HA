@@ -67,10 +67,13 @@ const NavigationGrid = () => {
                 cursor: 'pointer',
                 display: 'flex',
                 flexDirection: 'column',
-                justify: 'space-between',
+                justifyContent: 'space-between',
                 position: 'relative',
                 overflow: 'hidden',
-                minHeight: '220px'
+                minHeight: '220px',
+                background: '#FFFFFF',
+                border: '1px solid rgba(232, 160, 184, 0.3)',
+                boxShadow: '0 6px 22px rgba(184, 107, 130, 0.07)'
               }}
               role="button"
               tabIndex={0}
@@ -81,7 +84,7 @@ const NavigationGrid = () => {
               <div>
                 <div style={{
                   display: 'flex',
-                  justify: 'space-between',
+                  justifyContent: 'space-between',
                   alignItems: 'center',
                   marginBottom: '1.25rem'
                 }}>
@@ -91,9 +94,10 @@ const NavigationGrid = () => {
                     textTransform: 'uppercase',
                     padding: '0.3rem 0.75rem',
                     borderRadius: '20px',
-                    background: 'rgba(255, 255, 255, 0.06)',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                    color: '#e4dec3'
+                    background: '#FFF0F4',
+                    border: '1px solid rgba(232, 160, 184, 0.35)',
+                    color: '#B86B82',
+                    fontWeight: 600
                   }}>
                     {item.badge}
                   </span>
@@ -102,21 +106,21 @@ const NavigationGrid = () => {
                     width: '42px',
                     height: '42px',
                     borderRadius: '50%',
-                    background: 'rgba(212, 43, 88, 0.12)',
-                    border: '1px solid rgba(212, 43, 88, 0.25)',
+                    background: '#FFF0F4',
+                    border: '1px solid rgba(232, 160, 184, 0.4)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
                   }}>
-                    <IconComponent size={20} color={item.accentColor || '#d42b58'} />
+                    <IconComponent size={20} color="#B86B82" />
                   </div>
                 </div>
 
                 {/* Title & Subtitle */}
-                <h3 className="font-serif" style={{ fontSize: '1.5rem', color: '#fcf9f2', marginBottom: '0.5rem' }}>
+                <h3 className="font-serif" style={{ fontSize: '1.45rem', color: '#3D3035', marginBottom: '0.5rem', fontWeight: 600 }}>
                   {item.title}
                 </h3>
-                <p className="text-small" style={{ color: '#b8b09d', lineHeight: 1.6 }}>
+                <p className="text-small" style={{ color: '#7A6870', lineHeight: 1.6 }}>
                   {item.subtitle}
                 </p>
               </div>
@@ -127,9 +131,9 @@ const NavigationGrid = () => {
                 alignItems: 'center',
                 gap: '0.4rem',
                 marginTop: '1.5rem',
-                color: '#d42b58',
+                color: '#B86B82',
                 fontSize: '0.85rem',
-                fontWeight: 500
+                fontWeight: 600
               }}>
                 <span>Explore Section</span>
                 <ArrowRight size={14} />

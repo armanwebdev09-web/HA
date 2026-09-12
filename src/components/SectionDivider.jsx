@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const SectionDivider = ({ accent = "pink" }) => {
   const isPink = accent === "pink";
-  const glowColor = isPink ? "rgba(212, 43, 88, 0.4)" : "rgba(255, 183, 3, 0.4)";
+  const glowColor = isPink ? "rgba(232, 160, 184, 0.6)" : "rgba(232, 199, 168, 0.6)";
 
   return (
     <div style={{
@@ -20,13 +20,13 @@ const SectionDivider = ({ accent = "pink" }) => {
         initial={{ opacity: 0, scaleX: 0 }}
         whileInView={{ opacity: 1, scaleX: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
         style={{
           width: '100%',
-          maxWidth: '300px',
+          maxWidth: '280px',
           height: '1px',
           background: `linear-gradient(90deg, transparent 0%, ${glowColor} 50%, transparent 100%)`,
-          boxShadow: `0 0 15px ${glowColor}`
+          boxShadow: `0 0 10px ${glowColor}`
         }}
       />
     </div>

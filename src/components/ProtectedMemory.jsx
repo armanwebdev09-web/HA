@@ -58,7 +58,7 @@ const ProtectedMemory = ({
             }}
             exit={{ opacity: 0, scale: 0.95, filter: 'blur(8px)' }}
             transition={{ duration: 0.4 }}
-            className="glass-panel-wine"
+            className="glass-panel-romantic"
             style={{
               maxWidth: '580px',
               margin: '0 auto',
@@ -67,7 +67,10 @@ const ProtectedMemory = ({
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              gap: '1.25rem'
+              gap: '1.25rem',
+              background: '#FFFFFF',
+              border: '1px solid rgba(232, 160, 184, 0.38)',
+              boxShadow: '0 10px 32px rgba(184, 107, 130, 0.09)'
             }}
           >
             {/* Animated Lock Icon */}
@@ -78,23 +81,23 @@ const ProtectedMemory = ({
                 width: '64px',
                 height: '64px',
                 borderRadius: '50%',
-                background: 'rgba(212, 43, 88, 0.15)',
-                border: '1px solid rgba(212, 43, 88, 0.3)',
+                background: '#FFF0F4',
+                border: '1px solid rgba(232, 160, 184, 0.45)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                boxShadow: '0 0 25px rgba(212, 43, 88, 0.2)'
+                boxShadow: '0 4px 16px rgba(184, 107, 130, 0.12)'
               }}
             >
-              <Lock size={28} color="#d42b58" />
+              <Lock size={28} color="#B86B82" />
             </motion.div>
 
             {/* Headers */}
             <div>
-              <h3 className="font-serif text-glow" style={{ color: '#fcf9f2', fontSize: '1.85rem', marginBottom: '0.4rem' }}>
+              <h3 className="font-serif text-glow" style={{ color: '#3D3035', fontSize: '1.85rem', marginBottom: '0.4rem', fontWeight: 600 }}>
                 "{title}"
               </h3>
-              <p style={{ color: '#e4dec3', fontSize: '1.05rem', fontStyle: 'italic' }} className="font-serif">
+              <p style={{ color: '#7A6870', fontSize: '1.05rem', fontStyle: 'italic' }} className="font-serif">
                 {subtitle}
               </p>
             </div>
@@ -117,14 +120,14 @@ const ProtectedMemory = ({
                       width: '100%',
                       padding: '0.85rem 1.25rem',
                       borderRadius: '50px',
-                      background: 'rgba(10, 7, 18, 0.7)',
-                      border: error ? '1px solid #d42b58' : '1px solid rgba(255, 255, 255, 0.15)',
-                      color: '#fcf9f2',
+                      background: '#FFF7F8',
+                      border: error ? '1px solid #B86B82' : '1px solid rgba(232, 160, 184, 0.45)',
+                      color: '#3D3035',
                       fontSize: '1.1rem',
                       letterSpacing: '0.25em',
                       textAlign: 'center',
                       outline: 'none',
-                      boxShadow: 'inset 0 2px 6px rgba(0, 0, 0, 0.5)',
+                      boxShadow: 'inset 0 2px 5px rgba(184, 107, 130, 0.05)',
                       transition: 'border-color 0.3s'
                     }}
                     aria-label="Passcode Input"
@@ -141,8 +144,9 @@ const ProtectedMemory = ({
                       alignItems: 'center',
                       justifyContent: 'center',
                       gap: '0.4rem',
-                      color: '#d42b58',
-                      fontSize: '0.85rem'
+                      color: '#B86B82',
+                      fontSize: '0.85rem',
+                      fontWeight: 500
                     }}
                   >
                     <AlertCircle size={14} />
@@ -176,10 +180,10 @@ const ProtectedMemory = ({
               justifyContent: 'center',
               gap: '0.6rem',
               marginBottom: '2rem',
-              color: '#ffb703'
+              color: '#B86B82'
             }}>
-              <Unlock size={22} />
-              <span className="font-serif" style={{ fontSize: '1.5rem', color: '#fcf9f2' }}>
+              <Unlock size={22} color="#B86B82" />
+              <span className="font-serif" style={{ fontSize: '1.6rem', color: '#3D3035', fontWeight: 600 }}>
                 Private Gallery Unlocked ❤️
               </span>
             </div>

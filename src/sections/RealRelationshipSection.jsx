@@ -33,7 +33,7 @@ const RealRelationshipSection = () => {
   return (
     <section id="relationship" className="section" style={{ position: 'relative' }}>
       {/* Subtle ambient lighting */}
-      <div className="ambient-glow-burgundy" style={{ top: '20%', left: '50%', transform: 'translateX(-50%)' }} />
+      <div className="ambient-glow-blush" style={{ top: '20%', left: '50%', transform: 'translateX(-50%)' }} />
 
       <div className="container container-narrow" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
         <motion.div
@@ -50,10 +50,11 @@ const RealRelationshipSection = () => {
             gap: '0.5rem',
             padding: '0.4rem 1.1rem',
             borderRadius: '50px',
-            background: 'rgba(183, 110, 121, 0.15)',
-            border: '1px solid rgba(183, 110, 121, 0.3)',
-            color: '#b76e79',
+            background: '#FFF0F4',
+            border: '1px solid rgba(232, 160, 184, 0.4)',
+            color: '#B86B82',
             fontSize: '0.82rem',
+            fontWeight: 600,
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
             marginBottom: '1.5rem'
@@ -64,7 +65,13 @@ const RealRelationshipSection = () => {
         </motion.div>
 
         {/* Main Emotional Glass Card */}
-        <div className="glass-panel-wine" style={{ padding: '3.5rem 2.5rem', position: 'relative' }}>
+        <div className="glass-panel-romantic" style={{
+          padding: 'clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 2.5rem)',
+          position: 'relative',
+          background: 'linear-gradient(135deg, #FFFFFF 0%, #FFF0F4 100%)',
+          border: '1px solid rgba(232, 160, 184, 0.38)',
+          boxShadow: '0 10px 32px rgba(184, 107, 130, 0.08)'
+        }}>
           {/* Sequential Animated Lines */}
           <motion.div
             variants={containerVariants}
@@ -80,7 +87,7 @@ const RealRelationshipSection = () => {
                 className="font-serif"
                 style={{
                   fontSize: idx === lines.length - 1 ? 'clamp(1.75rem, 4vw, 2.5rem)' : 'clamp(1.35rem, 3vw, 1.85rem)',
-                  color: idx === lines.length - 1 ? '#fcf9f2' : '#e4dec3',
+                  color: idx === lines.length - 1 ? '#3D3035' : '#7A6870',
                   fontWeight: idx === lines.length - 1 ? 600 : 400,
                   fontStyle: idx === lines.length - 1 ? 'normal' : 'italic',
                   letterSpacing: '0.01em'
@@ -96,7 +103,7 @@ const RealRelationshipSection = () => {
               style={{
                 width: '60px',
                 height: '1px',
-                background: 'linear-gradient(to right, transparent, rgba(212, 43, 88, 0.6), transparent)',
+                background: 'linear-gradient(to right, transparent, rgba(232, 160, 184, 0.8), transparent)',
                 margin: '1.5rem 0'
               }}
             />
@@ -105,8 +112,8 @@ const RealRelationshipSection = () => {
             <motion.p
               variants={lineVariants}
               style={{
-                color: '#b8b09d',
-                fontSize: '1.1rem',
+                color: '#7A6870',
+                fontSize: '1.08rem',
                 lineHeight: 1.8,
                 maxWidth: '560px'
               }}
@@ -122,13 +129,13 @@ const RealRelationshipSection = () => {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.6rem',
-                color: '#d42b58',
+                color: '#B86B82',
                 fontSize: '1.15rem',
-                fontWeight: 500
+                fontWeight: 600
               }}
               className="font-serif"
             >
-              <Heart size={18} fill="#d42b58" />
+              <Heart size={18} fill="#B86B82" />
               <span>"{closingQuote}"</span>
             </motion.div>
           </motion.div>

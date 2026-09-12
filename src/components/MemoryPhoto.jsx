@@ -22,12 +22,12 @@ const MemoryPhoto = ({ photo, onClick, index = 0, tilt = 0 }) => {
       style={{
         cursor: 'pointer',
         transform: `rotate(${rotationDegrees}deg)`,
-        background: 'linear-gradient(145deg, #1c152c 0%, #110c1e 100%)',
-        border: '1px solid rgba(255, 255, 255, 0.12)',
-        padding: '0.9rem 0.9rem 1.25rem 0.9rem',
-        borderRadius: '14px',
-        boxShadow: '0 10px 25px rgba(0, 0, 0, 0.4)',
-        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+        background: '#FFFFFF',
+        border: '1px solid rgba(232, 160, 184, 0.35)',
+        padding: '0.85rem 0.85rem 1.25rem 0.85rem',
+        borderRadius: '16px',
+        boxShadow: '0 8px 25px rgba(184, 107, 130, 0.08), 0 2px 6px rgba(61, 48, 53, 0.04)',
+        transition: 'transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center'
@@ -42,14 +42,15 @@ const MemoryPhoto = ({ photo, onClick, index = 0, tilt = 0 }) => {
         width: '100%',
         aspectRatio: '4/3',
         overflow: 'hidden',
-        borderRadius: '8px',
-        backgroundColor: '#0a0712',
+        borderRadius: '10px',
+        backgroundColor: '#FFF0F4',
         position: 'relative'
       }}>
         <img
           src={photo.src}
           alt={photo.caption || 'Memory Photo'}
-          loading="lazy"
+          loading={index === 0 ? "eager" : "lazy"}
+          decoding="async"
           onError={() => setHasError(true)}
           style={{
             width: '100%',
@@ -71,21 +72,22 @@ const MemoryPhoto = ({ photo, onClick, index = 0, tilt = 0 }) => {
         }}>
           {photo.caption && (
             <p className="font-serif" style={{
-              color: '#fcf9f2',
+              color: '#3D3035',
               fontSize: '1.05rem',
               fontStyle: 'italic',
               margin: 0,
-              lineHeight: 1.3
+              lineHeight: 1.3,
+              fontWeight: 500
             }}>
               "{photo.caption}"
             </p>
           )}
           {photo.date && (
             <span style={{
-              fontSize: '0.75rem',
-              color: '#b8b09d',
+              fontSize: '0.78rem',
+              color: '#7A6870',
               display: 'block',
-              marginTop: '0.2rem',
+              marginTop: '0.25rem',
               letterSpacing: '0.05em'
             }}>
               {photo.date}

@@ -23,16 +23,16 @@
   }
 }
 
-// Primary Burgundy Gradient Button
+// Primary Dusty Rose Romantic Button
 .btn-primary {
-  background: linear-gradient(135deg, $burgundy-vibrant 0%, $burgundy-main 100%);
-  color: $ivory-main;
-  border-color: rgba(212, 43, 88, 0.4);
-  box-shadow: $shadow-md, 0 0 20px rgba(139, 21, 50, 0.3);
+  background: linear-gradient(135deg, $accent-primary 0%, $accent-deep 100%);
+  color: $text-light;
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 6px 20px rgba(184, 107, 130, 0.28);
 
   &:hover {
-    background: linear-gradient(135deg, $burgundy-light 0%, $burgundy-vibrant 100%);
-    box-shadow: $shadow-lg, $shadow-glow-pink;
+    background: linear-gradient(135deg, #edaec2 0%, #a85d73 100%);
+    box-shadow: 0 8px 25px rgba(184, 107, 130, 0.38);
     transform: translateY(-2px);
   }
 
@@ -41,17 +41,17 @@
   }
 }
 
-// Secondary Glass Button
+// Secondary Clean White / Translucent Button
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur($glass-blur);
-  color: $ivory-main;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: $bg-card;
+  color: $text-primary;
+  border: 1px solid $border-delicate;
+  box-shadow: $shadow-sm;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(212, 43, 88, 0.4);
-    box-shadow: 0 0 20px rgba(212, 43, 88, 0.2);
+    background: $bg-highlight;
+    border-color: $accent-primary;
+    box-shadow: 0 6px 18px rgba(184, 107, 130, 0.12);
     transform: translateY(-2px);
   }
 
@@ -63,31 +63,33 @@
 // Ghost Minimalist Button
 .btn-ghost {
   background: transparent;
-  color: $ivory-muted;
+  color: $text-secondary;
   padding: 0.5rem 1rem;
 
   &:hover {
-    color: $ivory-main;
-    background: rgba(255, 255, 255, 0.04);
+    color: $text-primary;
+    background: $bg-highlight;
   }
 }
 
 // Icon-only Round Button
 .btn-icon {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   padding: 0;
   border-radius: 50%;
   @include flex-center;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: $ivory-main;
+  background: $bg-card;
+  border: 1px solid $border-delicate;
+  color: $text-primary;
+  box-shadow: $shadow-sm;
   transition: all $transition-smooth;
 
   &:hover {
-    background: rgba(212, 43, 88, 0.2);
-    border-color: rgba(212, 43, 88, 0.5);
-    box-shadow: $shadow-glow-pink;
+    background: $bg-highlight;
+    border-color: $accent-primary;
+    color: $accent-deep;
+    box-shadow: $shadow-glow-rose;
     transform: scale(1.05);
   }
 }
