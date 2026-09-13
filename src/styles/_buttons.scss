@@ -23,16 +23,17 @@
   }
 }
 
-// Primary Dusty Rose Romantic Button
+// Primary Baby Blue Button
 .btn-primary {
-  background: linear-gradient(135deg, $accent-primary 0%, $accent-deep 100%);
-  color: $text-light;
-  border-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 6px 20px rgba(184, 107, 130, 0.28);
+  background: $accent-primary; // #78C5E8
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 20px rgba(79, 168, 209, 0.28), 0 0 16px rgba(120, 197, 232, 0.22);
+  border-radius: $radius-full;
 
   &:hover {
-    background: linear-gradient(135deg, #edaec2 0%, #a85d73 100%);
-    box-shadow: 0 8px 25px rgba(184, 107, 130, 0.38);
+    background: $accent-deep; // #4FA8D1
+    box-shadow: 0 8px 24px rgba(79, 168, 209, 0.38), 0 0 20px rgba(120, 197, 232, 0.32);
     transform: translateY(-2px);
   }
 
@@ -41,17 +42,19 @@
   }
 }
 
-// Secondary Clean White / Translucent Button
+// Secondary Light Baby Blue Button
 .btn-secondary {
-  background: $bg-card;
-  color: $text-primary;
-  border: 1px solid $border-delicate;
+  background: $bg-secondary; // #EAF8FF
+  color: $text-accent; // #397D9F
+  border: 1px solid $border-color; // #D6EDF7
   box-shadow: $shadow-sm;
+  border-radius: $radius-full;
 
   &:hover {
-    background: $bg-highlight;
-    border-color: $accent-primary;
-    box-shadow: 0 6px 18px rgba(184, 107, 130, 0.12);
+    background: $bg-soft-blue; // #DDF4FF
+    border-color: $accent-baby-blue;
+    color: $accent-deep;
+    box-shadow: 0 6px 18px rgba(79, 168, 209, 0.16);
     transform: translateY(-2px);
   }
 
@@ -68,7 +71,7 @@
 
   &:hover {
     color: $text-primary;
-    background: $bg-highlight;
+    background: $bg-secondary;
   }
 }
 
@@ -80,16 +83,16 @@
   border-radius: 50%;
   @include flex-center;
   background: $bg-card;
-  border: 1px solid $border-delicate;
+  border: 1px solid $border-color;
   color: $text-primary;
   box-shadow: $shadow-sm;
   transition: all $transition-smooth;
 
   &:hover {
-    background: $bg-highlight;
+    background: $bg-secondary;
     border-color: $accent-primary;
-    color: $accent-deep;
-    box-shadow: $shadow-glow-rose;
+    color: $text-accent;
+    box-shadow: 0 0 14px rgba(120, 197, 232, 0.28);
     transform: scale(1.05);
   }
 }

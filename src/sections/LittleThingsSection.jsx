@@ -41,8 +41,8 @@ const LittleThingsSection = () => {
   return (
     <section id="little-things" className="section" style={{ position: 'relative' }}>
       {/* Ambient glow backgrounds */}
-      <div className="ambient-glow-pink" style={{ top: '25%', right: '15%' }} />
-      <div className="ambient-glow-blush" style={{ bottom: '15%', left: '10%' }} />
+      <div className="ambient-glow-light-blue" style={{ top: '25%', right: '15%' }} />
+      <div className="ambient-glow-blue" style={{ bottom: '15%', left: '10%' }} />
 
       <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
         {/* Section Header */}
@@ -59,24 +59,24 @@ const LittleThingsSection = () => {
             gap: '0.5rem',
             padding: '0.4rem 1.1rem',
             borderRadius: '50px',
-            background: '#FFF0F4',
-            border: '1px solid rgba(232, 160, 184, 0.4)',
-            color: '#B86B82',
+            background: '#EAF8FF',
+            border: '1px solid #D6EDF7',
+            color: '#397D9F',
             fontSize: '0.82rem',
             fontWeight: 600,
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
             marginBottom: '1rem'
           }}>
-            <Heart size={14} fill="#B86B82" />
+            <Heart size={14} fill="#397D9F" />
             <span>Why You Are So Special</span>
           </div>
 
-          <h2 className="font-serif text-glow mb-xs" style={{ fontSize: 'clamp(2.25rem, 5vw, 3.5rem)', color: '#3D3035' }}>
+          <h2 className="font-serif text-glow mb-xs" style={{ fontSize: 'clamp(2.25rem, 5vw, 3.5rem)', color: '#263B46' }}>
             {title}
           </h2>
 
-          <p style={{ color: '#7A6870', fontSize: '1.05rem', maxWidth: '600px', margin: '0 auto' }}>
+          <p style={{ color: '#607782', fontSize: '1.05rem', maxWidth: '600px', margin: '0 auto' }}>
             {subtitle}
           </p>
         </motion.div>
@@ -97,7 +97,10 @@ const LittleThingsSection = () => {
               <motion.div
                 key={item.id || index}
                 variants={itemVariants}
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                whileHover={{
+                  y: isEmotional ? -8 : -10,
+                  transition: isEmotional ? { duration: 0.3 } : { type: 'spring', stiffness: 350, damping: 14 }
+                }}
                 className={isEmotional ? "glass-panel-romantic" : "glass-card"}
                 style={{
                   textAlign: 'left',
@@ -106,11 +109,9 @@ const LittleThingsSection = () => {
                   flexDirection: 'column',
                   justifyContent: 'space-between',
                   minHeight: '230px',
-                  background: isEmotional ? 'linear-gradient(135deg, #FFFFFF 0%, #FFF0F4 100%)' : '#FFFFFF',
-                  border: isEmotional 
-                    ? '1px solid rgba(232, 160, 184, 0.45)' 
-                    : '1px solid rgba(232, 160, 184, 0.28)',
-                  boxShadow: '0 8px 24px rgba(184, 107, 130, 0.08)'
+                  background: isEmotional ? 'linear-gradient(135deg, #FFFFFF 0%, #EAF8FF 100%)' : '#FFFFFF',
+                  border: '1px solid #D6EDF7',
+                  boxShadow: '0 8px 24px rgba(79, 168, 209, 0.08)'
                 }}
               >
                 {/* Top Badge & Icon */}
@@ -127,36 +128,39 @@ const LittleThingsSection = () => {
                       textTransform: 'uppercase',
                       padding: '0.3rem 0.75rem',
                       borderRadius: '20px',
-                      background: '#FFF0F4',
-                      border: '1px solid rgba(232, 160, 184, 0.35)',
-                      color: '#B86B82',
+                      background: '#EAF8FF',
+                      border: '1px solid #D6EDF7',
+                      color: '#397D9F',
                       fontWeight: 600
                     }}>
                       {item.badge}
                     </span>
 
-                    <div style={{
-                      width: '42px',
-                      height: '42px',
-                      borderRadius: '50%',
-                      background: '#FFF0F4',
-                      border: '1px solid rgba(232, 160, 184, 0.4)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center'
-                    }}>
-                      <IconComponent size={20} color="#B86B82" />
+                    <div 
+                      className={!isEmotional ? "animate-bounce-gentle" : ""}
+                      style={{
+                        width: '42px',
+                        height: '42px',
+                        borderRadius: '50%',
+                        background: '#EAF8FF',
+                        border: '1px solid #D6EDF7',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}
+                    >
+                      <IconComponent size={20} color="#397D9F" />
                     </div>
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-serif" style={{ fontSize: '1.45rem', color: '#3D3035', marginBottom: '0.6rem', fontWeight: 600 }}>
+                  <h3 className="font-serif" style={{ fontSize: '1.45rem', color: '#263B46', marginBottom: '0.6rem', fontWeight: 600 }}>
                     {item.title}
                   </h3>
 
                   {/* Description */}
                   <p style={{
-                    color: '#7A6870',
+                    color: '#607782',
                     lineHeight: 1.7,
                     fontSize: '0.98rem'
                   }}>
@@ -166,8 +170,8 @@ const LittleThingsSection = () => {
 
                 {/* Subtle Bottom Accent Dot */}
                 <div style={{ marginTop: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                  <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#E8A0B8' }} />
-                  <span style={{ fontSize: '0.75rem', color: '#9C8A92', textTransform: 'capitalize' }}>
+                  <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#78C5E8' }} />
+                  <span style={{ fontSize: '0.75rem', color: '#607782', textTransform: 'capitalize' }}>
                     {item.type} moment
                   </span>
                 </div>

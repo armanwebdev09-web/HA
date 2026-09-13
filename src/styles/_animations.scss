@@ -65,38 +65,55 @@
   }
 }
 
-// Ambient Background Glow Blobs (Blush Palette - Soft & Optimized)
+// Soft Bouncing Motion for Playful Items
+@keyframes gentleBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-bounce-gentle {
+  animation: gentleBounce 2.5s ease-in-out infinite;
+}
+
+// Ambient Background Glow Blobs (Baby Blue + White Palette)
 .ambient-glow-burgundy,
-.ambient-glow-blush {
+.ambient-glow-blush,
+.ambient-glow-blue {
   position: absolute;
   width: clamp(260px, 38vw, 460px);
   height: clamp(260px, 38vw, 460px);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(232, 160, 184, 0.22) 0%, rgba(255, 247, 248, 0) 70%);
+  background: radial-gradient(circle, rgba(169, 221, 245, 0.28) 0%, rgba(247, 252, 255, 0) 70%);
   filter: blur(45px);
   pointer-events: none;
   z-index: 0;
   will-change: opacity;
 }
 
-.ambient-glow-pink {
+.ambient-glow-pink,
+.ambient-glow-light-blue {
   position: absolute;
   width: clamp(220px, 32vw, 360px);
   height: clamp(220px, 32vw, 360px);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(243, 198, 211, 0.26) 0%, rgba(255, 247, 248, 0) 70%);
+  background: radial-gradient(circle, rgba(221, 244, 255, 0.35) 0%, rgba(247, 252, 255, 0) 70%);
   filter: blur(40px);
   pointer-events: none;
   z-index: 0;
   will-change: opacity;
 }
 
-.ambient-glow-champagne {
+.ambient-glow-champagne,
+.ambient-glow-white {
   position: absolute;
   width: clamp(220px, 30vw, 360px);
   height: clamp(220px, 30vw, 360px);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(232, 199, 168, 0.2) 0%, rgba(255, 247, 248, 0) 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(247, 252, 255, 0) 70%);
   filter: blur(35px);
   pointer-events: none;
   z-index: 0;
@@ -106,8 +123,11 @@
 @media (max-width: $breakpoint-md) {
   .ambient-glow-burgundy,
   .ambient-glow-blush,
+  .ambient-glow-blue,
   .ambient-glow-pink,
-  .ambient-glow-champagne {
+  .ambient-glow-light-blue,
+  .ambient-glow-champagne,
+  .ambient-glow-white {
     filter: blur(25px);
     opacity: 0.5;
   }

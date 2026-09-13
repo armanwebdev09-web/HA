@@ -66,7 +66,7 @@ const Lightbox = ({ photos = [], currentIndex = 0, isOpen = false, onClose, onNa
             position: 'fixed',
             inset: 0,
             zIndex: 10000,
-            backgroundColor: 'rgba(38, 28, 33, 0.94)',
+            backgroundColor: 'rgba(247, 252, 255, 0.96)',
             backdropFilter: 'blur(20px)',
             WebkitBackdropFilter: 'blur(20px)',
             display: 'flex',
@@ -91,9 +91,10 @@ const Lightbox = ({ photos = [], currentIndex = 0, isOpen = false, onClose, onNa
               width: '44px',
               height: '44px',
               zIndex: 10002,
-              background: 'rgba(255, 247, 248, 0.1)',
-              borderColor: 'rgba(232, 160, 184, 0.3)',
-              color: '#FFF7F8'
+              background: 'rgba(255, 255, 255, 0.9)',
+              borderColor: '#D6EDF7',
+              color: '#263B46',
+              boxShadow: '0 4px 12px rgba(79, 168, 209, 0.12)'
             }}
             aria-label="Close Lightbox"
           >
@@ -105,8 +106,9 @@ const Lightbox = ({ photos = [], currentIndex = 0, isOpen = false, onClose, onNa
             position: 'absolute',
             top: '1.25rem',
             left: '1.25rem',
-            color: '#F3C6D3',
+            color: '#397D9F',
             fontSize: '0.85rem',
+            fontWeight: 600,
             letterSpacing: '0.1em'
           }}>
             {currentIndex + 1} / {photos.length}
@@ -125,9 +127,10 @@ const Lightbox = ({ photos = [], currentIndex = 0, isOpen = false, onClose, onNa
                 width: '44px',
                 height: '44px',
                 zIndex: 10002,
-                background: 'rgba(255, 247, 248, 0.1)',
-                borderColor: 'rgba(232, 160, 184, 0.3)',
-                color: '#FFF7F8'
+                background: 'rgba(255, 255, 255, 0.9)',
+                borderColor: '#D6EDF7',
+                color: '#263B46',
+                boxShadow: '0 4px 12px rgba(79, 168, 209, 0.12)'
               }}
               aria-label="Previous Photo"
             >
@@ -159,8 +162,8 @@ const Lightbox = ({ photos = [], currentIndex = 0, isOpen = false, onClose, onNa
                   maxHeight: '68vh',
                   objectFit: 'contain',
                   borderRadius: '12px',
-                  boxShadow: '0 20px 50px rgba(25, 17, 21, 0.7)',
-                  border: '1px solid rgba(232, 160, 184, 0.25)'
+                  boxShadow: '0 20px 50px rgba(79, 168, 209, 0.18)',
+                  border: '1px solid #D6EDF7'
                 }}
               />
             </AnimatePresence>
@@ -173,17 +176,17 @@ const Lightbox = ({ photos = [], currentIndex = 0, isOpen = false, onClose, onNa
                 style={{
                   marginTop: '1rem',
                   textAlign: 'center',
-                  color: '#FFF7F8',
+                  color: '#263B46',
                   maxWidth: '90vw'
                 }}
               >
                 {currentPhoto.caption && (
-                  <p className="font-serif" style={{ fontSize: 'clamp(1.1rem, 3.5vw, 1.35rem)', fontStyle: 'italic', marginBottom: '0.2rem', color: '#FFF7F8' }}>
+                  <p className="font-serif" style={{ fontSize: 'clamp(1.1rem, 3.5vw, 1.35rem)', fontStyle: 'italic', marginBottom: '0.2rem', color: '#263B46' }}>
                     "{currentPhoto.caption}"
                   </p>
                 )}
                 {currentPhoto.date && (
-                  <span style={{ fontSize: '0.8rem', color: '#E8C7A8', letterSpacing: '0.08em' }}>
+                  <span style={{ fontSize: '0.8rem', color: '#607782', letterSpacing: '0.08em', fontWeight: 500 }}>
                     {currentPhoto.date}
                   </span>
                 )}
@@ -204,9 +207,10 @@ const Lightbox = ({ photos = [], currentIndex = 0, isOpen = false, onClose, onNa
                 width: '44px',
                 height: '44px',
                 zIndex: 10002,
-                background: 'rgba(255, 247, 248, 0.1)',
-                borderColor: 'rgba(232, 160, 184, 0.3)',
-                color: '#FFF7F8'
+                background: 'rgba(255, 255, 255, 0.9)',
+                borderColor: '#D6EDF7',
+                color: '#263B46',
+                boxShadow: '0 4px 12px rgba(79, 168, 209, 0.12)'
               }}
               aria-label="Next Photo"
             >

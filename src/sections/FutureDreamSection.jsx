@@ -112,9 +112,9 @@ const FutureDreamSection = () => {
               gap: '0.5rem',
               padding: '0.45rem 1.25rem',
               borderRadius: '50px',
-              background: 'rgba(232, 160, 184, 0.2)',
-              border: '1px solid rgba(232, 160, 184, 0.45)',
-              color: '#FCECEF',
+              background: 'rgba(221, 244, 255, 0.15)',
+              border: '1px solid #78C5E8',
+              color: '#DDF4FF',
               fontSize: '0.82rem',
               fontWeight: 600,
               letterSpacing: '0.12em',
@@ -130,8 +130,8 @@ const FutureDreamSection = () => {
             className="font-serif text-glow"
             style={{
               fontSize: 'clamp(2.4rem, 5.5vw, 3.8rem)',
-              color: '#FFF7F8',
-              textShadow: '0 0 25px rgba(232, 160, 184, 0.35)',
+              color: '#FFFFFF',
+              textShadow: '0 0 25px rgba(120, 197, 232, 0.45)',
               margin: '0 0 0.6rem 0',
               fontWeight: 600
             }}
@@ -144,7 +144,7 @@ const FutureDreamSection = () => {
               fontFamily: "'Cormorant Garamond', Georgia, serif",
               fontSize: 'clamp(1.15rem, 2.6vw, 1.45rem)',
               fontStyle: 'italic',
-              color: '#F3C6D3',
+              color: '#DDF4FF',
               margin: 0,
               letterSpacing: '0.015em'
             }}
@@ -167,11 +167,11 @@ const FutureDreamSection = () => {
               marginTop: '1.75rem',
               padding: '2.25rem 2rem',
               borderRadius: '20px',
-              border: '1px solid rgba(232, 160, 184, 0.35)',
-              background: 'rgba(255, 255, 255, 0.94)',
+              border: '1px solid #D6EDF7',
+              background: 'rgba(255, 255, 255, 0.95)',
               backdropFilter: 'blur(20px)',
               WebkitBackdropFilter: 'blur(20px)',
-              boxShadow: '0 16px 40px rgba(0, 0, 0, 0.25), 0 0 25px rgba(232, 160, 184, 0.15)',
+              boxShadow: '0 16px 40px rgba(0, 0, 0, 0.25), 0 0 25px rgba(120, 197, 232, 0.18)',
               position: 'relative',
               textAlign: 'center'
             }}
@@ -185,15 +185,15 @@ const FutureDreamSection = () => {
                   textTransform: 'uppercase',
                   padding: '0.3rem 0.9rem',
                   borderRadius: '50px',
-                  background: '#FFF0F4',
-                  border: '1px solid rgba(232, 160, 184, 0.4)',
-                  color: '#B86B82',
+                  background: '#EAF8FF',
+                  border: '1px solid #D6EDF7',
+                  color: '#397D9F',
                   fontWeight: 600
                 }}
               >
                 {currentScene.badge}
               </span>
-              <span style={{ color: '#7A6870', fontSize: '0.8rem' }}>
+              <span style={{ color: '#607782', fontSize: '0.8rem' }}>
                 • Step {activeSceneIndex + 1} of {scenes.length}
               </span>
             </div>
@@ -203,7 +203,7 @@ const FutureDreamSection = () => {
               className="font-serif"
               style={{
                 fontSize: 'clamp(1.35rem, 3.2vw, 1.85rem)',
-                color: '#3D3035',
+                color: '#263B46',
                 marginBottom: '1rem',
                 fontWeight: 600
               }}
@@ -237,14 +237,14 @@ const FutureDreamSection = () => {
                         ? 'clamp(1.25rem, 3vw, 1.65rem)'
                         : (activeSceneIndex === 4 ? 'clamp(1.15rem, 2.6vw, 1.4rem)' : 'clamp(1.05rem, 2.4vw, 1.28rem)'),
                       color: (activeSceneIndex === 5 && idx === 1) || activeSceneIndex === 4
-                        ? '#B86B82'
-                        : '#7A6870',
+                        ? '#397D9F'
+                        : '#607782',
                       fontStyle: activeSceneIndex === 4 || (activeSceneIndex === 5 && idx === 0) ? 'italic' : 'normal',
                       fontWeight: (activeSceneIndex === 5 && idx === 1) || activeSceneIndex === 4 ? 600 : 400,
                       lineHeight: 1.7,
                       margin: 0,
                       maxWidth: '620px',
-                      textShadow: activeSceneIndex === 4 ? '0 0 15px rgba(232, 160, 184, 0.3)' : 'none'
+                      textShadow: activeSceneIndex === 4 ? '0 0 15px rgba(120, 197, 232, 0.35)' : 'none'
                     }}
                   >
                     "{p}"
@@ -262,7 +262,7 @@ const FutureDreamSection = () => {
                 justifyContent: 'space-between',
                 flexWrap: 'wrap',
                 gap: '1rem',
-                borderTop: '1px solid rgba(232, 160, 184, 0.25)',
+                borderTop: '1px solid #D6EDF7',
                 paddingTop: '1.25rem'
               }}
             >
@@ -279,9 +279,9 @@ const FutureDreamSection = () => {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '0.4rem',
-                  background: '#FFF0F4',
-                  color: '#3D3035',
-                  border: '1px solid rgba(232, 160, 184, 0.35)'
+                  background: '#EAF8FF',
+                  color: '#263B46',
+                  border: '1px solid #D6EDF7'
                 }}
                 aria-label="Previous Scene"
               >
@@ -303,8 +303,8 @@ const FutureDreamSection = () => {
                       height: '9px',
                       borderRadius: '50px',
                       background: activeSceneIndex === idx
-                        ? '#B86B82'
-                        : 'rgba(232, 160, 184, 0.35)',
+                        ? '#78C5E8'
+                        : '#D6EDF7',
                       border: 'none',
                       cursor: 'pointer',
                       transition: 'all 0.3s ease',
@@ -327,9 +327,9 @@ const FutureDreamSection = () => {
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '0.4rem',
-                    background: '#FFF0F4',
-                    borderColor: isPlayingAuto ? '#E8A0B8' : 'rgba(232, 160, 184, 0.35)',
-                    color: isPlayingAuto ? '#B86B82' : '#7A6870'
+                    background: '#EAF8FF',
+                    borderColor: isPlayingAuto ? '#78C5E8' : '#D6EDF7',
+                    color: isPlayingAuto ? '#397D9F' : '#607782'
                   }}
                   aria-label={isPlayingAuto ? "Pause Auto-play" : "Auto-play Scenes"}
                 >
@@ -347,13 +347,13 @@ const FutureDreamSection = () => {
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '0.4rem',
-                      background: 'linear-gradient(135deg, #E8A0B8 0%, #B86B82 100%)',
+                      background: 'linear-gradient(135deg, #78C5E8 0%, #4FA8D1 100%)',
                       border: '1px solid rgba(255, 255, 255, 0.4)',
                       color: '#FFFFFF'
                     }}
                     aria-label="Next Scene"
                   >
-                    <span>{activeSceneIndex === 3 ? "The Hug ❤️" : "Next"}</span>
+                    <span>{activeSceneIndex === 3 ? "The Hug 🩵" : "Next"}</span>
                     {activeSceneIndex === 3 ? <Heart size={15} style={{ fill: '#FFFFFF' }} /> : <ChevronRight size={16} />}
                   </button>
                 ) : (
@@ -366,9 +366,9 @@ const FutureDreamSection = () => {
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '0.4rem',
-                      background: '#FFF0F4',
-                      borderColor: 'rgba(232, 160, 184, 0.45)',
-                      color: '#B86B82'
+                      background: '#EAF8FF',
+                      borderColor: '#D6EDF7',
+                      color: '#397D9F'
                     }}
                     aria-label="Replay Story"
                   >

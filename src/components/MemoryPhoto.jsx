@@ -23,10 +23,10 @@ const MemoryPhoto = ({ photo, onClick, index = 0, tilt = 0 }) => {
         cursor: 'pointer',
         transform: `rotate(${rotationDegrees}deg)`,
         background: '#FFFFFF',
-        border: '1px solid rgba(232, 160, 184, 0.35)',
+        border: '1px solid #D6EDF7',
         padding: '0.85rem 0.85rem 1.25rem 0.85rem',
         borderRadius: '16px',
-        boxShadow: '0 8px 25px rgba(184, 107, 130, 0.08), 0 2px 6px rgba(61, 48, 53, 0.04)',
+        boxShadow: '0 8px 24px rgba(79, 168, 209, 0.08), 0 2px 6px rgba(38, 59, 70, 0.04)',
         transition: 'transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease',
         display: 'flex',
         flexDirection: 'column',
@@ -43,7 +43,7 @@ const MemoryPhoto = ({ photo, onClick, index = 0, tilt = 0 }) => {
         aspectRatio: '4/3',
         overflow: 'hidden',
         borderRadius: '10px',
-        backgroundColor: '#FFF0F4',
+        backgroundColor: '#EAF8FF',
         position: 'relative'
       }}>
         <img
@@ -72,7 +72,7 @@ const MemoryPhoto = ({ photo, onClick, index = 0, tilt = 0 }) => {
         }}>
           {photo.caption && (
             <p className="font-serif" style={{
-              color: '#3D3035',
+              color: '#263B46',
               fontSize: '1.05rem',
               fontStyle: 'italic',
               margin: 0,
@@ -85,7 +85,7 @@ const MemoryPhoto = ({ photo, onClick, index = 0, tilt = 0 }) => {
           {photo.date && (
             <span style={{
               fontSize: '0.78rem',
-              color: '#7A6870',
+              color: '#607782',
               display: 'block',
               marginTop: '0.25rem',
               letterSpacing: '0.05em'

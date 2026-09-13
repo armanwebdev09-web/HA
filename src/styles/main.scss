@@ -28,9 +28,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: 
-    radial-gradient(circle at 12% 14%, rgba(252, 236, 239, 0.9) 0%, transparent 45%),
-    radial-gradient(circle at 88% 78%, rgba(243, 198, 211, 0.45) 0%, transparent 50%),
-    radial-gradient(circle at 50% 45%, rgba(255, 240, 244, 0.7) 0%, transparent 65%);
+    radial-gradient(circle at 10% 12%, rgba(234, 248, 255, 0.9) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(221, 244, 255, 0.6) 0%, transparent 50%),
+    radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.8) 0%, transparent 65%);
   background-attachment: fixed;
 }
 
@@ -94,7 +94,7 @@ body {
 
 // Selection Styling
 ::selection {
-  background: rgba(232, 160, 184, 0.38);
+  background: rgba(169, 221, 245, 0.42);
   color: $text-primary;
 }
 
@@ -104,15 +104,15 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: $bg-secondary;
+  background: $bg-primary;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(232, 160, 184, 0.65);
+  background: rgba(169, 221, 245, 0.7);
   border-radius: $radius-full;
   border: 1px solid $bg-secondary;
 
   &:hover {
-    background: $accent-deep;
+    background: $accent-primary;
   }
 }

@@ -35,7 +35,7 @@ const ProgressBar = ({ currentTime = 0, duration = 0, onSeek }) => {
             borderRadius: '4px',
             appearance: 'none',
             WebkitAppearance: 'none',
-            background: `linear-gradient(to right, #E8A0B8 ${progressPercent}%, rgba(232, 160, 184, 0.25) ${progressPercent}%)`,
+            background: `linear-gradient(to right, #78C5E8 ${progressPercent}%, #DDF4FF ${progressPercent}%)`,
             cursor: 'pointer',
             outline: 'none',
             margin: 0
@@ -46,10 +46,10 @@ const ProgressBar = ({ currentTime = 0, duration = 0, onSeek }) => {
 
       <div style={{
         display: 'flex',
-        justify: 'space-between',
+        justifyContent: 'space-between',
         marginTop: '0.45rem',
         fontSize: '0.8rem',
-        color: '#7A6870',
+        color: '#607782',
         fontFamily: "'Plus Jakarta Sans', sans-serif",
         fontWeight: 500
       }}>

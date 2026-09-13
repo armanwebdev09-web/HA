@@ -33,14 +33,14 @@ const VirtualHugScreen = ({ onProceed }) => {
     };
   }, [shouldReduceMotion]);
 
-  // Floating ambient hearts rising from the embrace
+  // Floating ambient hearts & clouds rising from the embrace
   const floatingHearts = [
     { id: 1, x: -35, y: -25, delay: 0.2, scale: 0.75, dur: 3.2, icon: '🤍' },
-    { id: 2, x: 28, y: -35, delay: 0.8, scale: 0.9, dur: 3.6, icon: '💖' },
-    { id: 3, x: -15, y: -55, delay: 1.4, scale: 0.65, dur: 2.9, icon: '🤍' },
+    { id: 2, x: 28, y: -35, delay: 0.8, scale: 0.9, dur: 3.6, icon: '🩵' },
+    { id: 3, x: -15, y: -55, delay: 1.4, scale: 0.65, dur: 2.9, icon: '☁️' },
     { id: 4, x: 38, y: -20, delay: 2.0, scale: 0.7, dur: 3.4, icon: '✨' },
     { id: 5, x: -45, y: -10, delay: 1.1, scale: 0.8, dur: 3.8, icon: '🤍' },
-    { id: 6, x: 12, y: -65, delay: 1.7, scale: 0.7, dur: 3.1, icon: '🌸' },
+    { id: 6, x: 12, y: -65, delay: 1.7, scale: 0.7, dur: 3.1, icon: '🩵' },
   ];
 
   return (
@@ -59,8 +59,8 @@ const VirtualHugScreen = ({ onProceed }) => {
         position: 'fixed',
         inset: 0,
         zIndex: 10000,
-        backgroundColor: '#FFF7F8',
-        backgroundImage: 'radial-gradient(circle at 50% 40%, #FFF7F8 0%, #FCECEF 100%)',
+        backgroundColor: '#F7FCFF',
+        backgroundImage: 'radial-gradient(circle at 50% 35%, #FFFFFF 0%, #EAF8FF 100%)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -74,9 +74,9 @@ const VirtualHugScreen = ({ onProceed }) => {
       {/* Dreamy Ambient Stars & Particles */}
       <BackgroundStars count={shouldReduceMotion ? 12 : 28} />
 
-      {/* Atmospheric Romance Glows */}
+      {/* Atmospheric Baby Blue Glows */}
       <div
-        className="ambient-glow-blush"
+        className="ambient-glow-blue"
         style={{
           position: 'absolute',
           top: '38%',
@@ -85,7 +85,7 @@ const VirtualHugScreen = ({ onProceed }) => {
           width: '420px',
           height: '420px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(232, 160, 184, 0.24) 0%, rgba(255, 247, 248, 0) 70%)',
+          background: 'radial-gradient(circle, rgba(169, 221, 245, 0.32) 0%, rgba(247, 252, 255, 0) 70%)',
           filter: 'blur(40px)',
           pointerEvents: 'none',
           zIndex: 1
@@ -100,7 +100,7 @@ const VirtualHugScreen = ({ onProceed }) => {
           width: '280px',
           height: '280px',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(232, 199, 168, 0.22) 0%, rgba(255, 247, 248, 0) 75%)',
+          background: 'radial-gradient(circle, rgba(221, 244, 255, 0.45) 0%, rgba(247, 252, 255, 0) 75%)',
           filter: 'blur(30px)',
           pointerEvents: 'none',
           zIndex: 1
@@ -150,7 +150,7 @@ const VirtualHugScreen = ({ onProceed }) => {
               width: '190px',
               height: '190px',
               borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(243, 198, 211, 0.55) 0%, rgba(232, 160, 184, 0.25) 50%, transparent 72%)',
+              background: 'radial-gradient(circle, rgba(169, 221, 245, 0.6) 0%, rgba(120, 197, 232, 0.3) 50%, transparent 72%)',
               filter: 'blur(16px)',
               pointerEvents: 'none',
               zIndex: 0
@@ -184,7 +184,7 @@ const VirtualHugScreen = ({ onProceed }) => {
                 fontSize: '1.15rem',
                 pointerEvents: 'none',
                 zIndex: 4,
-                filter: 'drop-shadow(0 2px 8px rgba(232, 160, 184, 0.5))'
+                filter: 'drop-shadow(0 2px 8px rgba(120, 197, 232, 0.5))'
               }}
             >
               {item.icon}
@@ -221,35 +221,35 @@ const VirtualHugScreen = ({ onProceed }) => {
               }}
             >
               <defs>
-                {/* Character 1 (Left): Soft Warm Cream Gradient */}
+                {/* Character 1 (Left): Soft Pure White to Sky Tint */}
                 <linearGradient id="charLeftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#fffdfb" />
-                  <stop offset="60%" stopColor="#f7eae9" />
-                  <stop offset="100%" stopColor="#ebd6db" />
+                  <stop offset="0%" stopColor="#ffffff" />
+                  <stop offset="60%" stopColor="#eef7fc" />
+                  <stop offset="100%" stopColor="#ddf4ff" />
                 </linearGradient>
 
-                {/* Character 2 (Right): Gentle Warm Rose Gradient */}
+                {/* Character 2 (Right): Gentle Sky White Gradient */}
                 <linearGradient id="charRightGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#fff7f8" />
-                  <stop offset="60%" stopColor="#f5e0e5" />
-                  <stop offset="100%" stopColor="#e5c1cb" />
+                  <stop offset="0%" stopColor="#ffffff" />
+                  <stop offset="60%" stopColor="#eaf8ff" />
+                  <stop offset="100%" stopColor="#cdeaf7" />
                 </linearGradient>
 
                 {/* Arm gradients */}
                 <linearGradient id="armGradLeft" x1="0%" y1="0%" x2="100%" y2="50%">
-                  <stop offset="0%" stopColor="#fffdfb" />
-                  <stop offset="100%" stopColor="#ecd4da" />
+                  <stop offset="0%" stopColor="#ffffff" />
+                  <stop offset="100%" stopColor="#ddf4ff" />
                 </linearGradient>
 
                 <linearGradient id="armGradRight" x1="100%" y1="0%" x2="0%" y2="50%">
-                  <stop offset="0%" stopColor="#fff7f8" />
-                  <stop offset="100%" stopColor="#e5c1cb" />
+                  <stop offset="0%" stopColor="#ffffff" />
+                  <stop offset="100%" stopColor="#d6edf7" />
                 </linearGradient>
 
                 {/* Soft shadow under characters */}
                 <radialGradient id="groundShadow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="rgba(61, 48, 53, 0.15)" />
-                  <stop offset="100%" stopColor="rgba(61, 48, 53, 0)" />
+                  <stop offset="0%" stopColor="rgba(38, 59, 70, 0.12)" />
+                  <stop offset="100%" stopColor="rgba(38, 59, 70, 0)" />
                 </radialGradient>
               </defs>
 
@@ -448,8 +448,8 @@ const VirtualHugScreen = ({ onProceed }) => {
                      C 124 50, 125 57, 140 67
                      C 155 57, 156 50, 151 46
                      C 147 43, 142 46, 140 50 Z"
-                  fill="#ff4d79"
-                  filter="drop-shadow(0 2px 6px rgba(255, 77, 121, 0.6))"
+                  fill="#78C5E8"
+                  filter="drop-shadow(0 2px 8px rgba(120, 197, 232, 0.6))"
                 />
               </motion.g>
             </svg>
@@ -479,16 +479,16 @@ const VirtualHugScreen = ({ onProceed }) => {
                 fontFamily: "'Cormorant Garamond', Georgia, serif",
                 fontSize: 'clamp(1.5rem, 4.2vw, 2.3rem)',
                 fontWeight: 600,
-                color: '#3D3035',
+                color: '#263B46',
                 letterSpacing: '-0.01em',
                 lineHeight: 1.3,
-                textShadow: '0 0 20px rgba(232, 160, 184, 0.25)',
+                textShadow: '0 0 20px rgba(169, 221, 245, 0.3)',
                 margin: 0
               }}
             >
               A little hug for you before we begin.{' '}
-              <span style={{ display: 'inline-block', filter: 'drop-shadow(0 0 6px rgba(232, 160, 184, 0.4))' }}>
-                🤍
+              <span style={{ display: 'inline-block', filter: 'drop-shadow(0 0 6px rgba(120, 197, 232, 0.5))' }}>
+                🩵
               </span>
             </motion.h1>
           )}
@@ -504,7 +504,7 @@ const VirtualHugScreen = ({ onProceed }) => {
                 fontSize: 'clamp(1.05rem, 2.6vw, 1.35rem)',
                 fontStyle: 'italic',
                 fontWeight: 400,
-                color: '#7A6870',
+                color: '#607782',
                 letterSpacing: '0.015em',
                 lineHeight: 1.5,
                 margin: 0,
@@ -515,7 +515,7 @@ const VirtualHugScreen = ({ onProceed }) => {
             </motion.p>
           )}
 
-          {/* Step 11: Button "Come inside ❤️" */}
+          {/* Step 11: Button "Come inside 🤍" */}
           {showButton && (
             <motion.div
               initial={{ opacity: 0, scale: 0.92, y: 12 }}
@@ -532,8 +532,8 @@ const VirtualHugScreen = ({ onProceed }) => {
                   padding: '0.95rem 2.4rem',
                   fontSize: '1.05rem',
                   letterSpacing: '0.03em',
-                  background: 'linear-gradient(135deg, #E8A0B8 0%, #B86B82 100%)',
-                  boxShadow: '0 8px 24px rgba(184, 107, 130, 0.28), 0 0 20px rgba(232, 160, 184, 0.3)',
+                  background: '#78C5E8',
+                  boxShadow: '0 8px 24px rgba(79, 168, 209, 0.28), 0 0 20px rgba(120, 197, 232, 0.25)',
                   border: '1px solid rgba(255, 255, 255, 0.4)',
                   cursor: 'pointer',
                   display: 'inline-flex',

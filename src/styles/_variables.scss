@@ -1,50 +1,52 @@
 // ==========================================
-// ROMANTIC DIARY DESIGN SYSTEM - VARIABLES
-// Soft, Feminine, Elegant Blush Theme
+// BABY BLUE + WHITE DESIGN SYSTEM - VARIABLES
+// Cute, Pure, Soft, Peaceful, Dreamy & Romantic
 // ==========================================
 
 // 1. Color Palette Tokens
 // Backgrounds
-$bg-primary: #FFF7F8;          // Very soft blush white
-$bg-secondary: #FCECEF;        // Soft blush pink
-$bg-card: #FFFFFF;             // Clean white diary card
-$bg-highlight: #FFF0F4;        // Delicate blush highlight
-$bg-translucent: rgba(255, 255, 255, 0.82); // Frosted diary glass
+$bg-primary: #F7FCFF;          // Primary background: very soft blush/sky white
+$bg-card: #FFFFFF;             // Pure white card canvas
+$bg-secondary: #EAF8FF;        // Light baby blue
+$bg-soft-blue: #DDF4FF;        // Soft baby blue highlight
+$bg-translucent: rgba(255, 255, 255, 0.78); // Frosted white glass
 
 // Accents
-$accent-primary: #E8A0B8;      // Dusty rose
-$accent-secondary: #F3C6D3;    // Soft pastel pink
-$accent-deep: #B86B82;         // Muted rose
-$accent-warm: #E8C7A8;         // Soft champagne
+$accent-primary: #78C5E8;      // Medium blue (primary button, active dots)
+$accent-baby-blue: #A9DDF5;    // Primary baby blue (timeline, borders, accents)
+$accent-deep: #4FA8D1;         // Deep soft blue (hover, lock icon, active dots)
+$accent-soft: #DDF4FF;         // Soft baby blue accent
 
 // Typography Colors
-$text-primary: #3D3035;        // Warm dark plum (high readability)
-$text-secondary: #7A6870;      // Muted mauve
-$text-muted: #9C8A92;          // Subtle blush gray
-$text-light: #FFFFFF;          // Pure white for high-contrast badge/button text
+$text-primary: #263B46;        // Deep slate plum (high readability)
+$text-secondary: #607782;      // Muted slate
+$text-muted: #7E97A4;          // Subtle slate for timestamps & captions
+$text-accent: #397D9F;         // Soft blue text
+$text-soft: #607782;           // Alias for secondary text
+$text-light: #FFFFFF;          // Pure white for buttons & badges
 
 // Glow & Borders
-$glow-blush-soft: rgba(232, 160, 184, 0.2);
-$glow-blush-intense: rgba(184, 107, 130, 0.28);
-$glow-warm: rgba(232, 199, 168, 0.25);
-$border-delicate: rgba(232, 160, 184, 0.22);
-$border-focus: rgba(184, 107, 130, 0.5);
+$border-color: #D6EDF7;        // Clean baby-blue border
+$border-delicate: #D6EDF7;     // Backward compatibility alias
+$border-focus: #78C5E8;        // Active focus border
+$glow-blue-soft: rgba(120, 197, 232, 0.22);
+$glow-blue-intense: rgba(79, 168, 209, 0.35);
 
 // 2. Glassmorphism Specifications
-$glass-bg-subtle: rgba(255, 255, 255, 0.65);
-$glass-bg-medium: rgba(255, 255, 255, 0.85);
-$glass-bg-strong: rgba(255, 255, 255, 0.94);
-$glass-border-subtle: rgba(232, 160, 184, 0.2);
-$glass-border-glow: rgba(184, 107, 130, 0.35);
+$glass-bg-subtle: rgba(255, 255, 255, 0.72);
+$glass-bg-medium: rgba(255, 255, 255, 0.88);
+$glass-bg-strong: rgba(255, 255, 255, 0.96);
+$glass-border-subtle: #D6EDF7;
+$glass-border-glow: rgba(120, 197, 232, 0.4);
 $glass-blur: 14px;
 $glass-blur-strong: 20px;
 
 // 3. Shadows & Elevation
-$shadow-sm: 0 4px 14px rgba(61, 48, 53, 0.05);
-$shadow-md: 0 8px 26px rgba(184, 107, 130, 0.08);
-$shadow-lg: 0 16px 42px rgba(61, 48, 53, 0.1);
-$shadow-glow-rose: 0 0 28px rgba(232, 160, 184, 0.3);
-$shadow-glow-deep: 0 0 32px rgba(184, 107, 130, 0.25);
+$shadow-sm: 0 4px 14px rgba(79, 168, 209, 0.08);
+$shadow-md: 0 8px 24px rgba(79, 168, 209, 0.12);
+$shadow-lg: 0 16px 40px rgba(79, 168, 209, 0.16);
+$shadow-glow-blue: 0 0 24px rgba(120, 197, 232, 0.3);
+$shadow-glow-rose: 0 0 24px rgba(120, 197, 232, 0.3); // Compatibility alias
 
 // 4. Typography Families
 $font-serif: 'Cormorant Garamond', Georgia, serif;

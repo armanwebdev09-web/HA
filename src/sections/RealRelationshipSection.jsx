@@ -33,7 +33,7 @@ const RealRelationshipSection = () => {
   return (
     <section id="relationship" className="section" style={{ position: 'relative' }}>
       {/* Subtle ambient lighting */}
-      <div className="ambient-glow-blush" style={{ top: '20%', left: '50%', transform: 'translateX(-50%)' }} />
+      <div className="ambient-glow-blue" style={{ top: '20%', left: '50%', transform: 'translateX(-50%)' }} />
 
       <div className="container container-narrow" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
         <motion.div
@@ -50,9 +50,9 @@ const RealRelationshipSection = () => {
             gap: '0.5rem',
             padding: '0.4rem 1.1rem',
             borderRadius: '50px',
-            background: '#FFF0F4',
-            border: '1px solid rgba(232, 160, 184, 0.4)',
-            color: '#B86B82',
+            background: '#EAF8FF',
+            border: '1px solid #D6EDF7',
+            color: '#397D9F',
             fontSize: '0.82rem',
             fontWeight: 600,
             letterSpacing: '0.12em',
@@ -68,9 +68,9 @@ const RealRelationshipSection = () => {
         <div className="glass-panel-romantic" style={{
           padding: 'clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 2.5rem)',
           position: 'relative',
-          background: 'linear-gradient(135deg, #FFFFFF 0%, #FFF0F4 100%)',
-          border: '1px solid rgba(232, 160, 184, 0.38)',
-          boxShadow: '0 10px 32px rgba(184, 107, 130, 0.08)'
+          background: 'linear-gradient(135deg, #FFFFFF 0%, #EAF8FF 100%)',
+          border: '1px solid #D6EDF7',
+          boxShadow: '0 10px 32px rgba(79, 168, 209, 0.08)'
         }}>
           {/* Sequential Animated Lines */}
           <motion.div
@@ -87,7 +87,7 @@ const RealRelationshipSection = () => {
                 className="font-serif"
                 style={{
                   fontSize: idx === lines.length - 1 ? 'clamp(1.75rem, 4vw, 2.5rem)' : 'clamp(1.35rem, 3vw, 1.85rem)',
-                  color: idx === lines.length - 1 ? '#3D3035' : '#7A6870',
+                  color: idx === lines.length - 1 ? '#263B46' : '#607782',
                   fontWeight: idx === lines.length - 1 ? 600 : 400,
                   fontStyle: idx === lines.length - 1 ? 'normal' : 'italic',
                   letterSpacing: '0.01em'
@@ -103,7 +103,7 @@ const RealRelationshipSection = () => {
               style={{
                 width: '60px',
                 height: '1px',
-                background: 'linear-gradient(to right, transparent, rgba(232, 160, 184, 0.8), transparent)',
+                background: 'linear-gradient(to right, transparent, #78C5E8, transparent)',
                 margin: '1.5rem 0'
               }}
             />
@@ -112,7 +112,7 @@ const RealRelationshipSection = () => {
             <motion.p
               variants={lineVariants}
               style={{
-                color: '#7A6870',
+                color: '#607782',
                 fontSize: '1.08rem',
                 lineHeight: 1.8,
                 maxWidth: '560px'
@@ -129,13 +129,13 @@ const RealRelationshipSection = () => {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.6rem',
-                color: '#B86B82',
+                color: '#397D9F',
                 fontSize: '1.15rem',
                 fontWeight: 600
               }}
               className="font-serif"
             >
-              <Heart size={18} fill="#B86B82" />
+              <Heart size={18} fill="#397D9F" />
               <span>"{closingQuote}"</span>
             </motion.div>
           </motion.div>

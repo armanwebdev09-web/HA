@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Lock, Unlock, Key, AlertCircle } from 'lucide-react';
+import { Lock, Unlock, Key, AlertCircle, Sparkles } from 'lucide-react';
 import PhotoGallery from './PhotoGallery';
+import BackgroundStars from './BackgroundStars';
 
 /**
  * ProtectedMemory Component
@@ -19,12 +20,12 @@ const ProtectedMemory = ({
 }) => {
   const [passcode, setPasscode] = useState('');
   const [isUnlocked, setIsUnlocked] = useState(false);
+  const [isUnlocking, setIsUnlocking] = useState(false);
   const [error, setError] = useState('');
   const [isShaking, setIsShaking] = useState(false);
 
   // Modular unlock validator (ready for async API call if backend auth is added in future)
   const validatePasscode = async (enteredCode) => {
-    // Simulated check - replace with async fetch('/api/verify-passcode') if backend added
     return enteredCode === correctPasscode;
   };
 
@@ -35,8 +36,12 @@ const ProtectedMemory = ({
     const isValid = await validatePasscode(passcode.trim());
 
     if (isValid) {
-      setIsUnlocked(true);
-      if (onUnlockSuccess) onUnlockSuccess();
+      setIsUnlocking(true);
+      setTimeout(() => {
+        setIsUnlocked(true);
+        setIsUnlocking(false);
+        if (onUnlockSuccess) onUnlockSuccess();
+      }, 1300);
     } else {
       setError('Incorrect passcode. Please try again.');
       setIsShaking(true);
@@ -45,9 +50,59 @@ const ProtectedMemory = ({
   };
 
   return (
-    <div className="protected-memory-wrapper" style={{ width: '100%' }}>
+    <div className="protected-memory-wrapper" style={{ width: '100%', position: 'relative' }}>
       <AnimatePresence mode="wait">
-        {!isUnlocked ? (
+        {isUnlocking ? (
+          /* Unlocking Animation State: 🔒 -> 🔓 with soft blue glow & tiny particles */
+          <motion.div
+            key="unlocking-screen"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+            style={{
+              maxWidth: '520px',
+              margin: '0 auto',
+              padding: '3.5rem 2rem',
+              textAlign: 'center',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '1.25rem',
+              background: '#EAF8FF',
+              border: '1px solid #A9DDF5',
+              borderRadius: '20px',
+              boxShadow: '0 10px 40px rgba(120, 197, 232, 0.35)',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+          >
+            <BackgroundStars count={14} />
+
+            <motion.div
+              initial={{ scale: 0.8, rotate: -15 }}
+              animate={{ scale: [0.9, 1.2, 1.1], rotate: [0, -10, 0] }}
+              transition={{ duration: 1.0, ease: 'easeOut' }}
+              style={{
+                width: '74px',
+                height: '74px',
+                borderRadius: '50%',
+                background: '#FFFFFF',
+                border: '2px solid #78C5E8',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: '0 0 30px rgba(120, 197, 232, 0.6)'
+              }}
+            >
+              <Unlock size={34} color="#4FA8D1" />
+            </motion.div>
+
+            <h3 className="font-serif" style={{ color: '#263B46', fontSize: '1.8rem', fontWeight: 600 }}>
+              Unlocking Our Memories... 🩵
+            </h3>
+          </motion.div>
+        ) : !isUnlocked ? (
           <motion.div
             key="locked-screen"
             initial={{ opacity: 0, y: 15 }}
@@ -58,7 +113,7 @@ const ProtectedMemory = ({
             }}
             exit={{ opacity: 0, scale: 0.95, filter: 'blur(8px)' }}
             transition={{ duration: 0.4 }}
-            className="glass-panel-romantic"
+            className="glass-card"
             style={{
               maxWidth: '580px',
               margin: '0 auto',
@@ -68,9 +123,10 @@ const ProtectedMemory = ({
               flexDirection: 'column',
               alignItems: 'center',
               gap: '1.25rem',
-              background: '#FFFFFF',
-              border: '1px solid rgba(232, 160, 184, 0.38)',
-              boxShadow: '0 10px 32px rgba(184, 107, 130, 0.09)'
+              background: '#EAF8FF',
+              border: '1px solid #A9DDF5',
+              borderRadius: '20px',
+              boxShadow: '0 10px 32px rgba(79, 168, 209, 0.12)'
             }}
           >
             {/* Animated Lock Icon */}
@@ -81,23 +137,23 @@ const ProtectedMemory = ({
                 width: '64px',
                 height: '64px',
                 borderRadius: '50%',
-                background: '#FFF0F4',
-                border: '1px solid rgba(232, 160, 184, 0.45)',
+                background: '#FFFFFF',
+                border: '1px solid #A9DDF5',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                boxShadow: '0 4px 16px rgba(184, 107, 130, 0.12)'
+                boxShadow: '0 4px 16px rgba(79, 168, 209, 0.14)'
               }}
             >
-              <Lock size={28} color="#B86B82" />
+              <Lock size={28} color="#4FA8D1" />
             </motion.div>
 
             {/* Headers */}
             <div>
-              <h3 className="font-serif text-glow" style={{ color: '#3D3035', fontSize: '1.85rem', marginBottom: '0.4rem', fontWeight: 600 }}>
+              <h3 className="font-serif text-glow" style={{ color: '#263B46', fontSize: '1.85rem', marginBottom: '0.4rem', fontWeight: 600 }}>
                 "{title}"
               </h3>
-              <p style={{ color: '#7A6870', fontSize: '1.05rem', fontStyle: 'italic' }} className="font-serif">
+              <p style={{ color: '#607782', fontSize: '1.05rem', fontStyle: 'italic' }} className="font-serif">
                 {subtitle}
               </p>
             </div>
@@ -120,14 +176,14 @@ const ProtectedMemory = ({
                       width: '100%',
                       padding: '0.85rem 1.25rem',
                       borderRadius: '50px',
-                      background: '#FFF7F8',
-                      border: error ? '1px solid #B86B82' : '1px solid rgba(232, 160, 184, 0.45)',
-                      color: '#3D3035',
+                      background: '#FFFFFF',
+                      border: error ? '1px solid #4FA8D1' : '1px solid #A9DDF5',
+                      color: '#263B46',
                       fontSize: '1.1rem',
                       letterSpacing: '0.25em',
                       textAlign: 'center',
                       outline: 'none',
-                      boxShadow: 'inset 0 2px 5px rgba(184, 107, 130, 0.05)',
+                      boxShadow: 'inset 0 2px 5px rgba(79, 168, 209, 0.05)',
                       transition: 'border-color 0.3s'
                     }}
                     aria-label="Passcode Input"
@@ -144,7 +200,7 @@ const ProtectedMemory = ({
                       alignItems: 'center',
                       justifyContent: 'center',
                       gap: '0.4rem',
-                      color: '#B86B82',
+                      color: '#397D9F',
                       fontSize: '0.85rem',
                       fontWeight: 500
                     }}
@@ -157,7 +213,13 @@ const ProtectedMemory = ({
                 <button
                   type="submit"
                   className="btn btn-primary"
-                  style={{ width: '100%', padding: '0.85rem 1.5rem', marginTop: '0.25rem' }}
+                  style={{
+                    width: '100%',
+                    padding: '0.85rem 1.5rem',
+                    marginTop: '0.25rem',
+                    background: '#78C5E8',
+                    color: '#FFFFFF'
+                  }}
                 >
                   <Key size={16} />
                   <span>Unlock Memories</span>
@@ -180,11 +242,11 @@ const ProtectedMemory = ({
               justifyContent: 'center',
               gap: '0.6rem',
               marginBottom: '2rem',
-              color: '#B86B82'
+              color: '#397D9F'
             }}>
-              <Unlock size={22} color="#B86B82" />
-              <span className="font-serif" style={{ fontSize: '1.6rem', color: '#3D3035', fontWeight: 600 }}>
-                Private Gallery Unlocked ❤️
+              <Unlock size={22} color="#4FA8D1" />
+              <span className="font-serif" style={{ fontSize: '1.6rem', color: '#263B46', fontWeight: 600 }}>
+                Private Gallery Unlocked 🩵
               </span>
             </div>
 

@@ -9,8 +9,8 @@ const PhotoFrame = ({ photoPath, caption }) => {
       width: '100%',
       borderRadius: '16px',
       overflow: 'hidden',
-      border: '1px solid rgba(232, 160, 184, 0.3)',
-      background: '#FFF0F4',
+      border: '1px solid #D6EDF7',
+      background: '#EAF8FF',
       marginTop: '1.25rem',
       position: 'relative'
     }}>
@@ -33,17 +33,17 @@ const PhotoFrame = ({ photoPath, caption }) => {
         <div style={{
           padding: '2rem 1.5rem',
           textAlign: 'center',
-          border: '1px dashed rgba(232, 160, 184, 0.45)',
+          border: '1px dashed #A9DDF5',
           borderRadius: '16px',
-          background: '#FFF0F4',
-          color: '#7A6870',
+          background: '#EAF8FF',
+          color: '#607782',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
           gap: '0.5rem'
         }}>
-          <Camera size={24} color="#B86B82" />
+          <Camera size={24} color="#397D9F" />
           <span style={{ fontSize: '0.85rem' }}>Photo Slot</span>
           <code style={{ fontSize: '0.75rem', opacity: 0.7 }}>{photoPath}</code>
         </div>

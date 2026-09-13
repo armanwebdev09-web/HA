@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const SectionDivider = ({ accent = "pink" }) => {
-  const isPink = accent === "pink";
-  const glowColor = isPink ? "rgba(232, 160, 184, 0.6)" : "rgba(232, 199, 168, 0.6)";
+const SectionDivider = ({ accent = "blue" }) => {
+  const isBlue = accent === "blue";
+  const glowColor = isBlue ? "rgba(120, 197, 232, 0.55)" : "rgba(169, 221, 245, 0.45)";
 
   return (
     <div style={{

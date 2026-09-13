@@ -14,7 +14,7 @@ const WinterSceneIllustration = ({ sceneIndex = 0 }) => {
   // Floating hearts for the hug scene
   const hugHearts = [
     { id: 1, x: 390, y: 260, delay: 0.1, icon: '🤍' },
-    { id: 2, x: 420, y: 245, delay: 0.7, icon: '💖' },
+    { id: 2, x: 420, y: 245, delay: 0.7, icon: '🩵' },
     { id: 3, x: 375, y: 275, delay: 1.3, icon: '✨' },
     { id: 4, x: 435, y: 280, delay: 1.9, icon: '🤍' },
   ];
@@ -102,12 +102,12 @@ const WinterSceneIllustration = ({ sceneIndex = 0 }) => {
               <stop offset="100%" stopColor="#b2c9e6" />
             </linearGradient>
 
-            {/* Warm Hug Aura Glow */}
+            {/* Warm Hug Aura Glow (Soft Baby Blue & Pure White) */}
             <radialGradient id="hugAuraGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#ffe5ec" stopOpacity="0.8" />
-              <stop offset="45%" stopColor="#ffb3c6" stopOpacity="0.45" />
-              <stop offset="75%" stopColor="#d42b58" stopOpacity="0.18" />
-              <stop offset="100%" stopColor="#d42b58" stopOpacity="0" />
+              <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.85" />
+              <stop offset="35%" stopColor="#DDF4FF" stopOpacity="0.6" />
+              <stop offset="70%" stopColor="#78C5E8" stopOpacity="0.25" />
+              <stop offset="100%" stopColor="#4FA8D1" stopOpacity="0" />
             </radialGradient>
 
             {/* Stall Awning Red & Cream */}
@@ -495,7 +495,7 @@ const WinterSceneIllustration = ({ sceneIndex = 0 }) => {
                     ease: 'easeOut'
                   }}
                   style={{
-                    filter: 'drop-shadow(0 2px 6px rgba(212, 43, 88, 0.4))',
+                    filter: 'drop-shadow(0 2px 6px rgba(120, 197, 232, 0.5))',
                     userSelect: 'none'
                   }}
                 >

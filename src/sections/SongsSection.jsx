@@ -21,9 +21,9 @@ const SongsSection = () => {
             gap: '0.5rem',
             padding: '0.4rem 1rem',
             borderRadius: '50px',
-            background: '#FFF0F4',
-            border: '1px solid rgba(232, 160, 184, 0.4)',
-            color: '#B86B82',
+            background: '#EAF8FF',
+            border: '1px solid #D6EDF7',
+            color: '#397D9F',
             fontSize: '0.82rem',
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
@@ -34,11 +34,11 @@ const SongsSection = () => {
           </div>
 
           {/* Section Headline */}
-          <h2 className="font-serif text-glow mb-xs" style={{ fontSize: 'clamp(2.25rem, 5vw, 3.5rem)', color: '#3D3035' }}>
+          <h2 className="font-serif text-glow mb-xs" style={{ fontSize: 'clamp(2.25rem, 5vw, 3.5rem)', color: '#263B46' }}>
             {musicConfig.headline || "Songs That Remind Me Of You"}
           </h2>
 
-          <p style={{ color: '#7A6870', maxWidth: '600px', margin: '0 auto 2.5rem auto' }}>
+          <p style={{ color: '#607782', maxWidth: '600px', margin: '0 auto 2.5rem auto' }}>
             {musicConfig.description}
           </p>
 

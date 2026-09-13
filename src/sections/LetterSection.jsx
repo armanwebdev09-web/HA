@@ -2,11 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Sparkles } from 'lucide-react';
 import { birthdayConfig } from '../config/birthdayConfig';
+import BackgroundStars from '../components/BackgroundStars';
 
 const LetterSection = () => {
   return (
     <section id="letter" className="section" style={{ position: 'relative' }}>
-      <div className="container container-narrow" style={{ textAlign: 'center' }}>
+      <BackgroundStars count={14} />
+      <div className="container container-narrow" style={{ textAlign: 'center', position: 'relative', zIndex: 1 }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -19,20 +21,20 @@ const LetterSection = () => {
             gap: '0.5rem',
             padding: '0.4rem 1rem',
             borderRadius: '50px',
-            background: '#FFF0F4',
-            border: '1px solid rgba(232, 160, 184, 0.4)',
-            color: '#B86B82',
+            background: '#EAF8FF',
+            border: '1px solid #D6EDF7',
+            color: '#397D9F',
             fontSize: '0.82rem',
             fontWeight: 600,
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
             marginBottom: '1rem'
           }}>
-            <Heart size={14} fill="#B86B82" />
+            <Heart size={14} fill="#78C5E8" color="#78C5E8" />
             <span>A Letter From Me 💌</span>
           </div>
 
-          <h2 className="font-serif text-glow mb-md" style={{ color: '#3D3035' }}>
+          <h2 className="font-serif text-glow mb-md" style={{ color: '#263B46' }}>
             To My Dearest {birthdayConfig.name}
           </h2>
 
@@ -41,18 +43,18 @@ const LetterSection = () => {
             padding: 'clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem)',
             position: 'relative',
             background: '#FFFFFF',
-            border: '1px solid rgba(232, 160, 184, 0.35)',
-            boxShadow: '0 12px 36px rgba(184, 107, 130, 0.09)'
+            border: '1px solid #D6EDF7',
+            boxShadow: '0 12px 36px rgba(79, 168, 209, 0.10)'
           }}>
             <div style={{ position: 'absolute', top: '1.5rem', right: '1.5rem' }}>
-              <Sparkles size={22} color="#E8A0B8" />
+              <Sparkles size={22} color="#78C5E8" />
             </div>
 
-            <h3 className="font-serif" style={{ color: '#3D3035', fontSize: '1.85rem', marginBottom: '1.5rem', fontWeight: 600 }}>
+            <h3 className="font-serif" style={{ color: '#263B46', fontSize: '1.85rem', marginBottom: '1.5rem', fontWeight: 600 }}>
               Happy Birthday, {birthdayConfig.nickname || birthdayConfig.name}!
             </h3>
 
-            <div style={{ color: '#7A6870', lineHeight: 1.95, fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <div style={{ color: '#3D4F57', lineHeight: 1.95, fontSize: '1.05rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               <p>
                 On this special day, {birthdayConfig.displayDateFormatted}, I want to remind you just how deeply loved and appreciated you are.
               </p>
@@ -64,11 +66,11 @@ const LetterSection = () => {
               </p>
             </div>
 
-            <div style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(232, 160, 184, 0.25)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span className="font-serif" style={{ fontSize: '1.35rem', color: '#B86B82', fontStyle: 'italic', fontWeight: 600 }}>
-                Forever Yours ❤️
+            <div style={{ marginTop: '2.5rem', paddingTop: '1.5rem', borderTop: '1px solid #D6EDF7', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <span className="font-serif" style={{ fontSize: '1.35rem', color: '#397D9F', fontStyle: 'italic', fontWeight: 600 }}>
+                Forever Yours 🩵
               </span>
-              <span style={{ fontSize: '0.85rem', color: '#9C8A92' }}>
+              <span style={{ fontSize: '0.85rem', color: '#607782' }}>
                 {birthdayConfig.birthdayDate}
               </span>
             </div>

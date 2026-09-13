@@ -72,8 +72,8 @@ const NavigationGrid = () => {
                 overflow: 'hidden',
                 minHeight: '220px',
                 background: '#FFFFFF',
-                border: '1px solid rgba(232, 160, 184, 0.3)',
-                boxShadow: '0 6px 22px rgba(184, 107, 130, 0.07)'
+                border: '1px solid #D6EDF7',
+                boxShadow: '0 6px 20px rgba(79, 168, 209, 0.08)'
               }}
               role="button"
               tabIndex={0}
@@ -94,9 +94,9 @@ const NavigationGrid = () => {
                     textTransform: 'uppercase',
                     padding: '0.3rem 0.75rem',
                     borderRadius: '20px',
-                    background: '#FFF0F4',
-                    border: '1px solid rgba(232, 160, 184, 0.35)',
-                    color: '#B86B82',
+                    background: '#EAF8FF',
+                    border: '1px solid #D6EDF7',
+                    color: '#397D9F',
                     fontWeight: 600
                   }}>
                     {item.badge}
@@ -106,21 +106,21 @@ const NavigationGrid = () => {
                     width: '42px',
                     height: '42px',
                     borderRadius: '50%',
-                    background: '#FFF0F4',
-                    border: '1px solid rgba(232, 160, 184, 0.4)',
+                    background: '#EAF8FF',
+                    border: '1px solid #D6EDF7',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
                   }}>
-                    <IconComponent size={20} color="#B86B82" />
+                    <IconComponent size={20} color="#397D9F" />
                   </div>
                 </div>
 
                 {/* Title & Subtitle */}
-                <h3 className="font-serif" style={{ fontSize: '1.45rem', color: '#3D3035', marginBottom: '0.5rem', fontWeight: 600 }}>
+                <h3 className="font-serif" style={{ fontSize: '1.45rem', color: '#263B46', marginBottom: '0.5rem', fontWeight: 600 }}>
                   {item.title}
                 </h3>
-                <p className="text-small" style={{ color: '#7A6870', lineHeight: 1.6 }}>
+                <p className="text-small" style={{ color: '#607782', lineHeight: 1.6 }}>
                   {item.subtitle}
                 </p>
               </div>
@@ -131,7 +131,7 @@ const NavigationGrid = () => {
                 alignItems: 'center',
                 gap: '0.4rem',
                 marginTop: '1.5rem',
-                color: '#B86B82',
+                color: '#397D9F',
                 fontSize: '0.85rem',
                 fontWeight: 600
               }}>

@@ -8,7 +8,7 @@ const BackgroundStars = ({ count = 28 }) => {
   const stars = useMemo(() => {
     // Automatically reduce particle count on mobile
     const effectiveCount = typeof window !== 'undefined' && window.innerWidth < 768 ? Math.min(count, 14) : count;
-    const colors = ['#E8A0B8', '#F3C6D3', '#E8C7A8', '#FFFFFF'];
+    const colors = ['#78C5E8', '#A9DDF5', '#DDF4FF', '#FFFFFF'];
 
     return Array.from({ length: effectiveCount }).map((_, i) => ({
       id: i,

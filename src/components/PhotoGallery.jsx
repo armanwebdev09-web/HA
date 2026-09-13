@@ -62,20 +62,20 @@ const PhotoGallery = ({ categoryKey }) => {
             width: '60px',
             height: '60px',
             borderRadius: '50%',
-            background: '#FFF0F4',
-            border: '1px dashed rgba(232, 160, 184, 0.5)',
+            background: '#EAF8FF',
+            border: '1px dashed #A9DDF5',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
           }}>
-            <Camera size={28} color="#B86B82" />
+            <Camera size={28} color="#397D9F" />
           </div>
 
-          <h3 className="font-serif" style={{ color: '#3D3035', fontSize: '1.5rem', fontWeight: 600 }}>
+          <h3 className="font-serif" style={{ color: '#263B46', fontSize: '1.5rem', fontWeight: 600 }}>
             Ready For Your Photos
           </h3>
 
-          <p className="text-small" style={{ color: '#7A6870', lineHeight: 1.7 }}>
+          <p className="text-small" style={{ color: '#607782', lineHeight: 1.7 }}>
             Add your personal images into <code>public/photos/</code> subfolders and list them in <code>src/config/photoConfig.js</code> to display them here!
           </p>
         </motion.div>
@@ -92,8 +92,8 @@ const PhotoGallery = ({ categoryKey }) => {
                 gap: '0.6rem',
                 marginBottom: '1.5rem'
               }}>
-                <Sparkles size={18} color="#E8A0B8" />
-                <h3 className="font-serif" style={{ color: '#3D3035', fontSize: '1.6rem', fontWeight: 600 }}>
+                <Sparkles size={18} color="#78C5E8" />
+                <h3 className="font-serif" style={{ color: '#263B46', fontSize: '1.6rem', fontWeight: 600 }}>
                   {category.title}
                 </h3>
               </div>

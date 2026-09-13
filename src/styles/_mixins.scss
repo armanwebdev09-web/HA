@@ -42,15 +42,15 @@
 @mixin focus-ring {
   outline: none;
   &:focus-visible {
-    outline: 2px solid $accent-deep;
+    outline: 2px solid $accent-primary;
     outline-offset: 3px;
-    box-shadow: $shadow-glow-rose;
+    box-shadow: 0 0 16px rgba(120, 197, 232, 0.4);
   }
 }
 
 // Subtle Text Glow
 @mixin text-glow-romantic {
-  text-shadow: 0 0 20px rgba(232, 160, 184, 0.4), 0 0 35px rgba(243, 198, 211, 0.25);
+  text-shadow: 0 0 20px rgba(169, 221, 245, 0.4), 0 0 32px rgba(221, 244, 255, 0.3);
 }
 
 // Reduced Motion Preference

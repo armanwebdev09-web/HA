@@ -12,13 +12,13 @@ const Playlist = ({ songs = [], currentSongIndex = 0, isPlaying = false, onSelec
         alignItems: 'center',
         gap: '0.5rem',
         marginBottom: '1rem',
-        color: '#7A6870',
+        color: '#607782',
         fontSize: '0.85rem',
         letterSpacing: '0.1em',
         textTransform: 'uppercase',
         fontWeight: 600
       }}>
-        <Music size={15} color="#B86B82" />
+        <Music size={15} color="#397D9F" />
         <span>Playlist ({songs.length} {songs.length === 1 ? 'song' : 'songs'})</span>
       </div>
 
@@ -38,9 +38,9 @@ const Playlist = ({ songs = [], currentSongIndex = 0, isPlaying = false, onSelec
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                border: isActive ? '1.5px solid rgba(184, 107, 130, 0.6)' : '1px solid rgba(232, 160, 184, 0.25)',
-                background: isActive ? '#FFF0F4' : '#FFFFFF',
-                boxShadow: isActive ? '0 4px 16px rgba(232, 160, 184, 0.3)' : '0 2px 8px rgba(61, 48, 53, 0.04)'
+                border: isActive ? '1.5px solid #78C5E8' : '1px solid #D6EDF7',
+                background: isActive ? '#EAF8FF' : '#FFFFFF',
+                boxShadow: isActive ? '0 4px 16px rgba(120, 197, 232, 0.3)' : '0 2px 8px rgba(38, 59, 70, 0.04)'
               }}
               role="button"
               tabIndex={0}
@@ -52,8 +52,8 @@ const Playlist = ({ songs = [], currentSongIndex = 0, isPlaying = false, onSelec
                   width: '32px',
                   height: '32px',
                   borderRadius: '50%',
-                  background: isActive ? 'linear-gradient(135deg, #E8A0B8, #B86B82)' : '#FCECEF',
-                  color: isActive ? '#FFFFFF' : '#B86B82',
+                  background: isActive ? 'linear-gradient(135deg, #78C5E8, #4FA8D1)' : '#DDF4FF',
+                  color: isActive ? '#FFFFFF' : '#397D9F',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -71,11 +71,11 @@ const Playlist = ({ songs = [], currentSongIndex = 0, isPlaying = false, onSelec
 
                 {/* Song Details */}
                 <div style={{ textAlign: 'left' }}>
-                  <h4 className="font-serif" style={{ color: '#3D3035', fontSize: '1.1rem', margin: 0, fontWeight: isActive ? 600 : 500 }}>
+                  <h4 className="font-serif" style={{ color: '#263B46', fontSize: '1.1rem', margin: 0, fontWeight: isActive ? 600 : 500 }}>
                     {song.title || `Track ${index + 1}`}
                   </h4>
                   {song.artist && (
-                    <span style={{ fontSize: '0.8rem', color: '#7A6870' }}>
+                    <span style={{ fontSize: '0.8rem', color: '#607782' }}>
                       {song.artist}
                     </span>
                   )}
@@ -88,12 +88,12 @@ const Playlist = ({ songs = [], currentSongIndex = 0, isPlaying = false, onSelec
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.3rem',
-                  color: '#B86B82',
+                  color: '#397D9F',
                   fontSize: '0.75rem',
                   padding: '0.25rem 0.6rem',
                   borderRadius: '12px',
-                  background: 'rgba(232, 160, 184, 0.2)',
-                  border: '1px solid rgba(232, 160, 184, 0.35)',
+                  background: '#DDF4FF',
+                  border: '1px solid #D6EDF7',
                   fontWeight: 500
                 }}>
                   <HeartHandshake size={12} />

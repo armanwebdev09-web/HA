@@ -11,7 +11,7 @@ function App() {
 
   return (
     <AudioProvider>
-      <div className="app-container" style={{ backgroundColor: '#FFF7F8', minHeight: '100vh', color: '#3D3035' }}>
+      <div className="app-container" style={{ backgroundColor: '#F7FCFF', minHeight: '100vh', color: '#263B46' }}>
         <AnimatePresence mode="wait">
           {screenStage === 'hug' && (
             <VirtualHugScreen

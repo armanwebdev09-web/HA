@@ -57,8 +57,8 @@ const OpeningScreen = ({ onEnter }) => {
         position: 'fixed',
         inset: 0,
         zIndex: 9999,
-        backgroundColor: '#FFF7F8',
-        backgroundImage: 'radial-gradient(circle at 50% 35%, #FFF7F8 0%, #FCECEF 100%)',
+        backgroundColor: '#F7FCFF',
+        backgroundImage: 'radial-gradient(circle at 50% 35%, #FFFFFF 0%, #EAF8FF 100%)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -71,8 +71,8 @@ const OpeningScreen = ({ onEnter }) => {
       {/* Background Stars & Ambient Glow */}
       <BackgroundStars count={shouldReduceMotion ? 10 : 25} />
       
-      <div className="ambient-glow-blush animate-pulse-glow" style={{ top: '30%', left: '50%', transform: 'translate(-50%, -50%)' }} />
-      <div className="ambient-glow-champagne" style={{ bottom: '20%', right: '20%' }} />
+      <div className="ambient-glow-blue animate-pulse-glow" style={{ top: '30%', left: '50%', transform: 'translate(-50%, -50%)' }} />
+      <div className="ambient-glow-light-blue" style={{ bottom: '20%', right: '20%' }} />
 
       {/* Sequential Text & Content */}
       <div 
@@ -93,12 +93,12 @@ const OpeningScreen = ({ onEnter }) => {
           className="font-serif text-glow"
           style={{ 
             fontSize: 'clamp(2.5rem, 7vw, 4.5rem)',
-            color: '#3D3035',
+            color: '#263B46',
             fontWeight: 600,
             letterSpacing: '-0.02em'
           }}
         >
-          Hey, You. <span style={{ color: '#E8A0B8', display: 'inline-block' }}>❤️</span>
+          Hey, You. <span style={{ color: '#78C5E8', display: 'inline-block' }}>🩵</span>
         </motion.h1>
 
         {/* Step 2 */}
@@ -106,7 +106,7 @@ const OpeningScreen = ({ onEnter }) => {
           variants={itemVariants}
           style={{ 
             fontSize: 'clamp(1.15rem, 3vw, 1.5rem)',
-            color: '#7A6870',
+            color: '#607782',
             fontFamily: "'Cormorant Garamond', Georgia, serif",
             fontStyle: 'italic',
             letterSpacing: '0.01em'
@@ -120,13 +120,13 @@ const OpeningScreen = ({ onEnter }) => {
           <p 
             style={{ 
               fontSize: 'clamp(1rem, 2.2vw, 1.25rem)',
-              color: '#7A6870',
+              color: '#607782',
               lineHeight: 1.8,
               fontWeight: 400
             }}
           >
             Not just a birthday website...<br />
-            <span style={{ color: '#3D3035', fontWeight: 600 }}>A little piece of us.</span>
+            <span style={{ color: '#263B46', fontWeight: 600 }}>A little piece of us.</span>
           </p>
         </motion.div>
 

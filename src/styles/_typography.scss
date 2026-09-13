@@ -73,10 +73,11 @@ p, .text-body {
 .text-romantic {
   font-family: $font-serif;
   font-style: italic;
-  color: $accent-deep;
+  color: $text-accent;
 }
 
-.text-gradient-rose {
+.text-gradient-rose,
+.text-gradient-blue {
   background: linear-gradient(135deg, $text-primary 20%, $accent-deep 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
