@@ -1,154 +1,218 @@
-import React from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
-import { Sparkles } from 'lucide-react';
-import BackgroundStars from './BackgroundStars';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const OpeningScreen = ({ onEnter }) => {
-  const shouldReduceMotion = useReducedMotion();
+/**
+ * OpeningScreen
+ * 
+ * Displays:
+ * 1. "Some feelings are too beautiful to leave unspoken."
+ * Pause briefly.
+ * 2. "So I made you a little something. 🤍"
+ * 3. A glowing heart in the center of the screen.
+ */
+export default function OpeningScreen({ onProceed }) {
+  const [stage, setStage] = useState(1); // 1: first text, 2: second text, 3: glowing heart
 
-  // Animation parameters tailored for slow, elegant cinematic feel
-  const transitionDuration = shouldReduceMotion ? 0.3 : 1.2;
+  useEffect(() => {
+    // Step 1 -> Step 2 after 2.4s
+    const timer1 = setTimeout(() => {
+      setStage(2);
+    }, 2400);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: shouldReduceMotion ? 0.1 : 1.2,
-        delayChildren: 0.4,
-      },
-    },
-    exit: {
-      opacity: 0,
-      scale: shouldReduceMotion ? 1 : 1.04,
-      filter: 'blur(10px)',
-      transition: {
-        duration: shouldReduceMotion ? 0.4 : 1.0,
-        ease: [0.16, 1, 0.3, 1],
-      },
-    },
-  };
+    // Step 2 -> Step 3 (glowing heart) after another 2.2s
+    const timer2 = setTimeout(() => {
+      setStage(3);
+    }, 4600);
 
-  const itemVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: shouldReduceMotion ? 0 : 18,
-      filter: 'blur(4px)'
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      filter: 'blur(0px)',
-      transition: {
-        duration: transitionDuration,
-        ease: [0.16, 1, 0.3, 1],
-      },
-    },
-  };
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
+  }, []);
 
   return (
-    <motion.div
-      className="opening-screen-wrapper"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-      exit="exit"
+    <div
+      className="opening-screen"
       style={{
-        position: 'fixed',
-        inset: 0,
-        zIndex: 9999,
-        backgroundColor: '#F7FCFF',
-        backgroundImage: 'radial-gradient(circle at 50% 35%, #FFFFFF 0%, #EAF8FF 100%)',
+        minHeight: '100vh',
+        width: '100%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         padding: '2rem 1.5rem',
+        position: 'relative',
+        zIndex: 1,
         textAlign: 'center',
-        userSelect: 'none',
       }}
     >
-      {/* Background Stars & Ambient Glow */}
-      <BackgroundStars count={shouldReduceMotion ? 10 : 25} />
-      
-      <div className="ambient-glow-blue animate-pulse-glow" style={{ top: '30%', left: '50%', transform: 'translate(-50%, -50%)' }} />
-      <div className="ambient-glow-light-blue" style={{ bottom: '20%', right: '20%' }} />
-
-      {/* Sequential Text & Content */}
-      <div 
-        style={{ 
-          position: 'relative', 
-          zIndex: 2, 
-          maxWidth: '680px',
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '1.75rem'
-        }}
-      >
-        {/* Step 1 */}
-        <motion.h1 
-          variants={itemVariants} 
-          className="font-serif text-glow"
-          style={{ 
-            fontSize: 'clamp(2.5rem, 7vw, 4.5rem)',
-            color: '#263B46',
-            fontWeight: 600,
-            letterSpacing: '-0.02em'
-          }}
-        >
-          Hey, You. <span style={{ color: '#78C5E8', display: 'inline-block' }}>🩵</span>
-        </motion.h1>
-
-        {/* Step 2 */}
-        <motion.p 
-          variants={itemVariants}
-          style={{ 
-            fontSize: 'clamp(1.15rem, 3vw, 1.5rem)',
-            color: '#607782',
+      <div style={{ maxWidth: '640px', width: '100%', margin: '0 auto' }}>
+        {/* First text line */}
+        <motion.p
+          initial={{ opacity: 0, y: 14, filter: 'blur(6px)' }}
+          animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+          transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+          style={{
             fontFamily: "'Cormorant Garamond', Georgia, serif",
-            fontStyle: 'italic',
-            letterSpacing: '0.01em'
+            fontSize: 'clamp(1.75rem, 5vw, 2.75rem)',
+            fontWeight: 500,
+            lineHeight: 1.35,
+            color: '#263B46',
+            letterSpacing: '-0.01em',
+            marginBottom: '1.75rem',
           }}
         >
-          I made something for you.
+          Some feelings are too beautiful to leave unspoken.
         </motion.p>
 
-        {/* Step 3 */}
-        <motion.div variants={itemVariants} style={{ marginTop: '0.5rem' }}>
-          <p 
-            style={{ 
-              fontSize: 'clamp(1rem, 2.2vw, 1.25rem)',
-              color: '#607782',
-              lineHeight: 1.8,
-              fontWeight: 400
-            }}
-          >
-            Not just a birthday website...<br />
-            <span style={{ color: '#263B46', fontWeight: 600 }}>A little piece of us.</span>
-          </p>
-        </motion.div>
+        {/* Second text line */}
+        <AnimatePresence>
+          {stage >= 2 && (
+            <motion.p
+              initial={{ opacity: 0, y: 12, filter: 'blur(4px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif",
+                fontSize: 'clamp(1.05rem, 2.4vw, 1.35rem)',
+                fontWeight: 400,
+                color: '#4FA8D1',
+                lineHeight: 1.6,
+                letterSpacing: '0.01em',
+                marginBottom: '2.5rem',
+              }}
+            >
+              So I made you a little something. 🤍
+            </motion.p>
+          )}
+        </AnimatePresence>
 
-        {/* Step 4: CTA Button */}
-        <motion.div variants={itemVariants} style={{ marginTop: '1.5rem' }}>
-          <button
-            onClick={onEnter}
-            className="btn btn-primary"
-            style={{
-              padding: '0.95rem 2.25rem',
-              fontSize: '1.05rem',
-              letterSpacing: '0.03em',
-            }}
-            aria-label="Enter My Little World"
-          >
-            <Sparkles size={18} style={{ color: '#FFF' }} />
-            <span>Enter My Little World</span>
-          </button>
-        </motion.div>
+        {/* Glowing Heart */}
+        <AnimatePresence>
+          {stage >= 3 && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.75 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                marginTop: '1rem',
+                display: 'inline-flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '1.25rem',
+              }}
+            >
+              {/* Pulsing Glowing Heart button / touch target */}
+              <motion.button
+                onClick={onProceed}
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Begin journey"
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  padding: '1.5rem',
+                  cursor: 'pointer',
+                  position: 'relative',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  outline: 'none',
+                }}
+              >
+                {/* Ambient Soft Blue Radial Halo */}
+                <motion.div
+                  animate={{
+                    scale: [1, 1.25, 1],
+                    opacity: [0.35, 0.75, 0.35],
+                  }}
+                  transition={{
+                    duration: 3.2,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
+                  style={{
+                    position: 'absolute',
+                    width: '120px',
+                    height: '120px',
+                    borderRadius: '50%',
+                    background: 'radial-gradient(circle, rgba(169, 221, 245, 0.55) 0%, rgba(221, 244, 255, 0.2) 55%, transparent 75%)',
+                    filter: 'blur(12px)',
+                    pointerEvents: 'none',
+                  }}
+                />
+
+                {/* Heart SVG */}
+                <svg
+                  width="68"
+                  height="68"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  style={{
+                    filter: 'drop-shadow(0 0 16px rgba(169, 221, 245, 0.95)) drop-shadow(0 0 32px rgba(79, 168, 209, 0.45))',
+                    position: 'relative',
+                    zIndex: 2,
+                  }}
+                >
+                  <defs>
+                    <linearGradient id="glowingHeartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#FFFFFF" />
+                      <stop offset="50%" stopColor="#DDF4FF" />
+                      <stop offset="100%" stopColor="#A9DDF5" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                    fill="url(#glowingHeartGrad)"
+                    stroke="rgba(255, 255, 255, 0.9)"
+                    strokeWidth="0.8"
+                  />
+                </svg>
+              </motion.button>
+
+              {/* Gentle subtle prompt */}
+              <motion.button
+                onClick={onProceed}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 1.0 }}
+                style={{
+                  background: 'rgba(255, 255, 255, 0.85)',
+                  backdropFilter: 'blur(10px)',
+                  WebkitBackdropFilter: 'blur(10px)',
+                  border: '1px solid rgba(169, 221, 245, 0.55)',
+                  padding: '0.55rem 1.4rem',
+                  borderRadius: '9999px',
+                  color: '#397D9F',
+                  fontFamily: "'Plus Jakarta Sans', system-ui, sans-serif",
+                  fontSize: '0.85rem',
+                  fontWeight: 500,
+                  letterSpacing: '0.04em',
+                  cursor: 'pointer',
+                  boxShadow: '0 4px 16px rgba(79, 168, 209, 0.1)',
+                  transition: 'all 0.25s ease',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.borderColor = '#4FA8D1';
+                  e.currentTarget.style.color = '#263B46';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.borderColor = 'rgba(169, 221, 245, 0.55)';
+                  e.currentTarget.style.color = '#397D9F';
+                }}
+              >
+                <span>Touch gently to begin</span>
+                <span style={{ fontSize: '0.75rem' }}>♡</span>
+              </motion.button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </motion.div>
+    </div>
   );
-};
-
-export default OpeningScreen;
+}
